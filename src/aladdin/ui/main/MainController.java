@@ -22,8 +22,6 @@ import javafx.scene.control.ListView;
  */
 public class MainController implements Initializable {
 
-    
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     ListView<String> list = new ListView<String>();

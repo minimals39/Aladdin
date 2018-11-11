@@ -11,17 +11,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 /**
  *
  * @author japan
  */
 public class loginloader extends Application{
+    
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene scene = new Scene(root);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Hello !");
         primaryStage.setScene(scene);
         primaryStage.show();
     }

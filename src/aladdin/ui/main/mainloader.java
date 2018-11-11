@@ -5,10 +5,31 @@
  */
 package aladdin.ui.main;
 
+import javafx.application.Application;
+import static javafx.application.Application.launch;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
 /**
  *
  * @author japan
  */
-public class mainloader {
-    
+public class mainloader extends Application{
+            
+
+        public void start(Stage primaryStage) throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
+        Scene scene = new Scene(root);
+        
+        primaryStage.setTitle("Hello !");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+        public static void main(String[] args) {
+        launch(args);
+    }
+
 }
