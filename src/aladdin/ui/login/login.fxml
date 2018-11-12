@@ -15,7 +15,7 @@
       <Circle fill="DODGERBLUE" layoutX="200.0" layoutY="74.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="176.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="24.0" />
       <TextField layoutX="126.0" layoutY="158.0" promptText="Username" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" />
       <PasswordField layoutX="126.0" layoutY="197.0" promptText="Password" AnchorPane.bottomAnchor="77.4" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="125.0" AnchorPane.topAnchor="197.0" />
-      <Button layoutX="126.0" layoutY="248.0" mnemonicParsing="false" onAction="#login" text="Login" AnchorPane.leftAnchor="125.0" />
+      <Button fx:id="loginbutton" layoutX="126.0" layoutY="248.0" mnemonicParsing="false" onAction="#login" text="Login" AnchorPane.leftAnchor="125.0" />
       <Button layoutX="215.0" layoutY="248.0" mnemonicParsing="false" onAction="#register" text="Register" AnchorPane.rightAnchor="125.0" />
    </children>
 </AnchorPane>

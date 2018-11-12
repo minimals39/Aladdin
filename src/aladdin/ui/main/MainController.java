@@ -5,32 +5,65 @@
  */
 package aladdin.ui.main;
 
-import com.jfoenix.controls.JFXListView;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
 
  * @author japan
  */
+
 public class MainController implements Initializable {
+    @FXML
+    private Button info;
+    
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    ListView<String> list = new ListView<String>();
-    ObservableList<String> items =FXCollections.observableArrayList (
-    "Single", "Double", "Suite", "Family App");
-    list.setItems(items);
+    public void initialize(URL url, ResourceBundle rb) {    
+}
 
+    @FXML
+    private void initialize(ActionEvent event) {
+    }
 
-
-    }    
+    @FXML
+    private void itemwindow(MouseEvent event) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        closeStage();
+    }
     
+    private void closeStage() {
+        ((Stage)info.getScene().getWindow()).close();
+    }
+    
+    
+
+    @FXML
+    private void itemwindow(ActionEvent event)throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        closeStage();
+
+        
+    }
 }
