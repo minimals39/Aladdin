@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.sellerinfo.SellinfoController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aladdin.ui.sellerinfo.SellinfoController">
     <stylesheets>
         <URL value="@sellinfo.css" />
     </stylesheets>
@@ -17,5 +17,6 @@
       <ImageView fitHeight="119.0" fitWidth="143.0" layoutX="16.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="62.0" layoutY="175.0" mnemonicParsing="false" text="Uploadpic" />
       <Button layoutX="523.0" layoutY="350.0" mnemonicParsing="false" text="Edit" />
+      <Text layoutX="169.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Back Account" />
    </children>
 </AnchorPane>
