@@ -17,8 +17,8 @@
          <left>
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="search" />
-                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" text="back" />
+                  <Button fx:id="search" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="100.0" text="Search" />
+                  <Button mnemonicParsing="false" prefHeight="38.0" prefWidth="100.0" text="Category" />
                </children>
             </VBox>
          </left>
@@ -27,7 +27,7 @@
                <children>
                   <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: orange;" text="Home" AnchorPane.topAnchor="10.0" />
                   <Button fx:id="info" mnemonicParsing="false" style="-fx-background-color: orange;" text="info" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
-                  <Button layoutX="465.0" layoutY="9.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="checkout" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="9.0" />
+                  <Button layoutX="465.0" layoutY="9.0" mnemonicParsing="false" onAction="#checkout" style="-fx-background-color: orange;" text="checkout" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="9.0" />
                </children>
             </AnchorPane>
          </top>

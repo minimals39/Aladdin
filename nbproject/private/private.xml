@@ -3,13 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/LoginController.java</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/Aladdin.java</file>
             <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/login.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/mainloader.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/loginloader.java</file>
             <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/main.fxml</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/register.css</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/main.css</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/mainloader.java</file>
             <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/login.css</file>
             <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/MainController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/main.css</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/loginloader.java</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/register.fxml</file>
+            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/RegisterController.java</file>
         </group>
     </open-files>
 </project-private>

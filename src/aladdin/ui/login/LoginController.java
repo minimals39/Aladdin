@@ -16,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 /**
@@ -26,6 +28,12 @@ import javafx.stage.Stage;
 public class LoginController implements Initializable {
     @FXML
     private Button loginbutton;
+    @FXML
+    private RadioButton buyer;
+    @FXML
+    private ToggleGroup type;
+    @FXML
+    private RadioButton seller;
 
     /**
      * Initializes the controller class.
@@ -33,19 +41,31 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        loginbutton.setDisable(true);
+
     }    
 
     @FXML
     private void login(ActionEvent event) throws IOException {
         try{
-            
+       if(buyer.isSelected()){     
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
+        closeStage();}
+       else if(seller.isSelected()){
+       Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
         closeStage();
+       
+       }
         }
         
         catch(Exception e){
@@ -58,7 +78,20 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void register(ActionEvent event) {
+    private void register(ActionEvent event) throws IOException{
+        
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/register/register.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        closeStage();
+    }
+
+    @FXML
+    private void tick(ActionEvent event) {
+        loginbutton.setDisable(false);
     }
     
 }

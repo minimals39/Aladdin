@@ -27,6 +27,8 @@ import javafx.stage.Stage;
 public class MainController implements Initializable {
     @FXML
     private Button info;
+    @FXML
+    private Button search;
     
 
     @Override
@@ -40,30 +42,37 @@ public class MainController implements Initializable {
     @FXML
     private void itemwindow(MouseEvent event) throws IOException {
         Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/itempage/itempage.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
-        closeStage();
     }
     
     private void closeStage() {
         ((Stage)info.getScene().getWindow()).close();
     }
-    
-    
 
     @FXML
-    private void itemwindow(ActionEvent event)throws IOException {
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+    private void search(ActionEvent event) throws IOException{
+               Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/searchpage/searchpage.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
         primaryStage.show();
-        closeStage();
-
-        
     }
+
+    @FXML
+    private void checkout(ActionEvent event) throws IOException{
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/checkoutpage/checkoutpage.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    
+    
+
 }
