@@ -22,7 +22,8 @@
             <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: orange;" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: orange;" text="Home" AnchorPane.topAnchor="10.0" />
-                  <Button layoutX="1176.0" layoutY="9.0" mnemonicParsing="false" onAction="#addproduct" text="Add product" />
+                  <Button layoutX="1088.0" layoutY="9.0" mnemonicParsing="false" onAction="#addproduct" text="Add product" />
+                  <Button layoutX="1197.0" layoutY="9.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
                </children>
             </AnchorPane>
          </top>

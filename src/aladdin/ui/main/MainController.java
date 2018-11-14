@@ -25,10 +25,11 @@ import javafx.stage.Stage;
  */
 
 public class MainController implements Initializable {
-    @FXML
     private Button info;
     @FXML
     private Button search;
+    @FXML
+    private Button logout;
     
 
     @Override
@@ -50,7 +51,7 @@ public class MainController implements Initializable {
     }
     
     private void closeStage() {
-        ((Stage)info.getScene().getWindow()).close();
+        ((Stage)logout.getScene().getWindow()).close();
     }
 
     @FXML
@@ -72,6 +73,23 @@ public class MainController implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException{
+       Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        closeStage();
+    }
+
+    @FXML
+    private void category(ActionEvent event) {
+        
+    }
+
     
     
 

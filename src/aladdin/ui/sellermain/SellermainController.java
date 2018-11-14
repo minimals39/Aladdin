@@ -64,6 +64,21 @@ public class SellermainController implements Initializable {
 
         
     }
-    
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+       Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        closeStage();
+        
+    }
+            private void closeStage() {
+        ((Stage)showpane.getScene().getWindow()).close();
+    }
+
     
 }
