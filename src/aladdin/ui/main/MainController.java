@@ -36,6 +36,8 @@ public class MainController implements Initializable {
     private Button logout;
     @FXML
     private AnchorPane showpane;
+    @FXML
+    private Button account;
     
 
     @Override
@@ -109,6 +111,19 @@ public class MainController implements Initializable {
         }
     showpane.getChildren().clear();
     showpane.getChildren().add(newLoadedPane);        
+    }
+
+    @FXML
+    private void account(ActionEvent event) {
+               Pane newLoadedPane = null;
+        try {
+            newLoadedPane = FXMLLoader.load(getClass().getResource("/aladdin/ui/userinfo/userinfo.fxml"));
+        } catch (IOException ex) {
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    showpane.getChildren().clear();
+    showpane.getChildren().add(newLoadedPane);        
+        
     }
 
     

@@ -23,11 +23,12 @@
                   <Button layoutX="14.0" layoutY="11.0" mnemonicParsing="false" onAction="#initialize" style="-fx-background-color: orange;" text="Home" AnchorPane.topAnchor="10.0" />
                   <Button fx:id="logout" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: orange;" text="Logout" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
                   <Button layoutX="465.0" layoutY="9.0" mnemonicParsing="false" onAction="#checkout" style="-fx-background-color: orange;" text="checkout" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="9.0" />
+                  <Button fx:id="account" layoutX="1054.0" layoutY="9.0" mnemonicParsing="false" onAction="#account" style="-fx-background-color: orange;" text="Account" />
                </children>
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane fx:id="showpane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane fx:id="showpane" prefHeight="668.0" prefWidth="1178.0" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
