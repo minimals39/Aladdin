@@ -91,21 +91,6 @@ public class RegisterController implements Initializable {
         
         }
         if (buyer.isSelected()) {
-            System.out.println("Maven + Hibernate + MySQL");
-            Session session = HibernateUtil.getSessionFactory().openSession();
-
-            session.beginTransaction();
-            Customer Account = new Customer();
-
-            Account.setID(user);
-            Account.setName(n);
-            Account.setSurname(sur);
-            Account.setPassword(pw);
-            Account.setPayment("None");
-            session.save(Account);
-            session.getTransaction().commit();
-            
-            
             openmain("buyer");
             closeStage();
 
@@ -115,7 +100,7 @@ public class RegisterController implements Initializable {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
             session.beginTransaction();
-            Seller Account = new Seller();
+            Customer Account = new Customer();
 
             Account.setID(user);
             Account.setName(n);
