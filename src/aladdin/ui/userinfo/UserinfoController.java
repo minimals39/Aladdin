@@ -67,7 +67,13 @@ public class UserinfoController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
+         Name.setDisable(false);
+        Surname.setDisable(false);
+        Address.setDisable(false);
+        card.setDisable(false);
+        SN.setDisable(false);
         
+        //to do
     }
     
 }
