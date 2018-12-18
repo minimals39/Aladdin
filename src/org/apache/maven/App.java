@@ -14,18 +14,18 @@ public class App
         Customer Account = new Customer();
 
         Account.setID("471561");
-        Account.setName("GENM61");
-        Account.setSurname("GENM61");
-        Account.setPassword("GENM61");
-        Account.setPayment("GENM6");
+        Account.setName("TempName");
+        Account.setSurname("TempSName");
+        Account.setPassword("TempPass");
+        Account.setPayment("TempPay");
 
         Seller Account1 = new Seller();
 
         Account1.setID("47156");
-        Account1.setName("GENM6");
-        Account1.setSurname("GENM6");
-        Account1.setPassword("GENM6");
-        Account1.setPayment("GENM6");
+        Account1.setName("TempName");
+        Account1.setSurname("TempSName");
+        Account1.setPassword("TempPass");
+        Account1.setPayment("TempPay");
 
         /*Goods Account2 = new Goods();
 
