@@ -70,14 +70,19 @@ public class LoginController implements Initializable {
             if (buyer.isSelected()) {
                 String user = Name.getText();
                 String pass = Pass.getText();
-                String sql = "SELECT Name, Surname FROM aladdin.Customer WHERE ID= "+user;
+                String sql = "SELECT * FROM aladdin.Customer WHERE ID= "+user;
                 SQLQuery query = session.createSQLQuery(sql);
                 query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                 List data = query.list();
+                System.out.println(pass);
                 for (Object object : data) {
                     Map row = (Map) object;
                     System.out.print("First Name: " + row.get("Name"));
-                    System.out.println(", Surname: " + row.get("Surname"));
+                    System.out.println(", Pass: " + row.get("Password"));
+                    
+                    if(pass.equals(row.get("Password"))){
+                        System.out.println(", Correct " + row.get("Password"));
+                    }
                 }
 
                 Stage primaryStage = new Stage();
