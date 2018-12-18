@@ -70,7 +70,7 @@ public class LoginController implements Initializable {
             if (buyer.isSelected()) {
                 String user = Name.getText();
                 String pass = Pass.getText();
-                String sql = "SELECT * FROM aladdin.Customer WHERE ID= "+user;
+                String sql = "SELECT * FROM aladdin.Customer WHERE ID= " + user;
                 SQLQuery query = session.createSQLQuery(sql);
                 query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                 List data = query.list();
@@ -79,19 +79,20 @@ public class LoginController implements Initializable {
                     Map row = (Map) object;
                     System.out.print("First Name: " + row.get("Name"));
                     System.out.println(", Pass: " + row.get("Password"));
-                    
-                    if(pass.equals(row.get("Password"))){
+
+                    if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
+
+                        Stage primaryStage = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
+                        Scene scene = new Scene(root);
+                        primaryStage.setTitle("Hello World!");
+                        primaryStage.setScene(scene);
+                        primaryStage.show();
+                        closeStage();
                     }
                 }
 
-                Stage primaryStage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
-                Scene scene = new Scene(root);
-                primaryStage.setTitle("Hello World!");
-                primaryStage.setScene(scene);
-                primaryStage.show();
-                closeStage();
             } else if (seller.isSelected()) {
                 Stage primaryStage = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
