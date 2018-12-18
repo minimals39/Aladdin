@@ -10,18 +10,18 @@ public class Seller implements java.io.Serializable {
     private String ID;
     private String password;
     private String payment;
-    private String CustomerList;
+    private String GoodsID;
 
     public Seller() {
     }
 
-    public Seller(String name, String surname, String id, String password, String payment ,String CustomerList) {
+    public Seller(String name, String surname, String id, String password, String payment ,String GoodsID) {
         this.name = name;
         this.surname = surname;
         this.ID = id;
         this.password = password;
         this.payment = payment;
-        this.CustomerList = CustomerList;
+        this.GoodsID = GoodsID;
     }
 
     public Integer getNo() {
@@ -70,11 +70,11 @@ public class Seller implements java.io.Serializable {
     public void setPayment(String Payment) {
         this.payment = Payment;
     }
-    public String getCustomerList() {
-        return this.CustomerList;
+    public String getGoodsID() {
+        return this.GoodsID;
     }
 
-    public void setCustomerList(String CustomerList) {
-        this.CustomerList = CustomerList;
+    public void setGoodsID(String GoodsID) {
+        this.GoodsID = GoodsID;
     }
 }
