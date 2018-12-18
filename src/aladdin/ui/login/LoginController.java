@@ -53,6 +53,7 @@ public class LoginController implements Initializable {
     @FXML
     private void login(ActionEvent event) throws IOException {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -112,6 +113,8 @@ public class LoginController implements Initializable {
             }
         } catch (Exception e) {
 =======
+=======
+>>>>>>> parent of 569194d... Some Login edit
         try{
        if(buyer.isSelected()){     
         Stage primaryStage = new Stage();
@@ -134,6 +137,9 @@ public class LoginController implements Initializable {
         }
         
         catch(Exception e){
+<<<<<<< HEAD
+>>>>>>> parent of 569194d... Some Login edit
+=======
 >>>>>>> parent of 569194d... Some Login edit
             System.out.println("Cant load new window");
         }
