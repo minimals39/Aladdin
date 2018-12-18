@@ -27,6 +27,7 @@ import javafx.scene.control.TextField;
 import org.apache.persistence.HibernateUtil;
 import org.hibernate.*;
 import aladdin.SellerData;
+import aladdin.CustomerData;
 
 /**
  * FXML Controller class
@@ -70,6 +71,8 @@ public class LoginController implements Initializable {
         session.beginTransaction();
         System.out.println("Can We get here 3");
         
+        
+        
 
         try {
             if (buyer.isSelected()) {
@@ -90,6 +93,14 @@ public class LoginController implements Initializable {
 
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
+                        
+                        CustomerData logged = new CustomerData();
+                        
+                        logged.setGoodsID(""+row.get("GoodsID"));
+                        logged.setName(""+row.get("Name"));
+                        logged.setPayment(""+row.get("payment"));
+                        logged.setSurname(""+row.get("Surname"));
+                        
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
                         Scene scene = new Scene(root);
@@ -97,6 +108,12 @@ public class LoginController implements Initializable {
                         primaryStage.setScene(scene);
                         primaryStage.show();
                         closeStage();
+                        
+                        
+     
+                        
+
+                        
                     }
                 }
 
@@ -119,14 +136,6 @@ public class LoginController implements Initializable {
 
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
-                        
-                        SellerData Logged = new SellerData();
-                        Logged.setName(""+row.get("Name"));
-                        Logged.setSurname(""+row.get("Surname"));
-                        Logged.setPayment(""+row.get("Payment"));
-                        Logged.setGoodsID(""+row.get("GoodsID"));
-                        
-                        
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
                         Scene scene = new Scene(root);
