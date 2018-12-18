@@ -1,37 +1,30 @@
-package org.apache.maven;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package aladdin;
 
-public class Seller implements java.io.Serializable {
-
-    private static final long serialVersionUID = 1L;
-
-    private Integer no;
+/**
+ *
+ * @author WIN10
+ */
+public class SellerData {
     private String name;
     private String surname;
-    private String ID;
-    private String password;
     private String payment;
     private String CustomerList;
 
-    public Seller() {
+    public SellerData() {
     }
 
-    public Seller(String name, String surname, String id, String password, String payment ,String CustomerList) {
+    public SellerData(String name, String surname, String id, String password, String payment ,String CustomerList) {
         this.name = name;
         this.surname = surname;
-        this.ID = id;
-        this.password = password;
         this.payment = payment;
         this.CustomerList = CustomerList;
     }
 
-    public Integer getNo() {
-
-        return this.no;
-    }
-
-    public void setno(Integer no) {
-        this.no = no;
-    }
 
     public String getName() {
         return this.name;
@@ -41,13 +34,6 @@ public class Seller implements java.io.Serializable {
         this.name = name;
     }
 
-    public String getID() {
-        return this.ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
     public String getSurname() {
         return this.surname;
     }
@@ -56,13 +42,6 @@ public class Seller implements java.io.Serializable {
         this.surname = surname;
     }
 
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String Password) {
-        this.password = Password;
-    }
     public String getPayment() {
         return this.payment;
     }
@@ -78,3 +57,4 @@ public class Seller implements java.io.Serializable {
         this.CustomerList = CustomerList;
     }
 }
+
