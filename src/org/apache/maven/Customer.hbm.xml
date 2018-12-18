@@ -23,6 +23,9 @@
         <property name="payment" type="string">
             <column name="payment" length="20" not-null="true" unique="false" />
         </property>
+        <property name="GoodsID" type="string">
+            <column name="GoodsID" length="100" not-null="true" unique="false" />
+        </property>
         <property name="Address" type="string">
             <column name="Address" length="50" not-null="true" unique="false" />
         </property>        
@@ -49,8 +52,8 @@
         <property name="payment" type="string">
             <column name="Payment" length="20" not-null="true" unique="false" />
         </property>
-        <property name="GoodsID" type="string">
-            <column name="GoodsID" length="100" not-null="true" unique="false" />
+        <property name="CustomerList" type="string">
+            <column name="CustomerList" length="100" not-null="true" unique="false" />
         </property>
     </class>
 
@@ -73,25 +76,6 @@
         </property>
         <property name="quantity" type="string">
             <column name="Quantity" length="20" not-null="true" unique="false" />
-        </property>
-    </class>
-    
-    <class name="org.apache.maven.Goods" table="Order" catalog="aladdin">
-        <id name="no" type="java.lang.Integer">
-            <column name="No" />
-            <generator class="identity" />
-        </id>
-        <property name="Quantity" type="string">
-            <column name="Quantity" length="2" not-null="true" unique="false" />
-        </property>
-        <property name="CustomerID" type="string">
-            <column name="CustomerID" length="20" not-null="true" unique="false" />
-        </property>
-        <property name="SellerID" type="string">
-            <column name="SellerID" length="20" not-null="true" unique="false" />
-        </property>
-        <property name="GoodsID" type="string">
-            <column name="GoodsID" length="20" not-null="true" unique="false" />
         </property>
     </class>
 </hibernate-mapping>

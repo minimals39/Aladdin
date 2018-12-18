@@ -2,6 +2,10 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -11,10 +15,21 @@
     </stylesheets>
    <children>
       <Text layoutX="171.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text layoutX="171.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
+      <Text layoutX="169.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
       <Text layoutX="171.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
-      <Text layoutX="171.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment account" />
-      <Button layoutX="52.0" layoutY="188.0" mnemonicParsing="false" onAction="#pic" text="Choose pic" />
-      <Button layoutX="508.0" layoutY="350.0" mnemonicParsing="false" onAction="#edit" text="Edit" />
+      <Text layoutX="123.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creditcard number" />
+      <Button layoutX="45.0" layoutY="187.0" mnemonicParsing="false" onAction="#pic" text="Choose pic" />
+      <Button fx:id="edit" layoutX="503.0" layoutY="340.0" mnemonicParsing="false" onAction="#edit" text="Edit" />
+      <ImageView fx:id="profpic" fitHeight="161.0" fitWidth="148.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Pictures/seyana.PNG" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Name" layoutX="228.0" layoutY="34.0" />
+      <TextField fx:id="Surname" layoutX="228.0" layoutY="74.0" />
+      <TextArea fx:id="Address" layoutX="228.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="card" layoutX="228.0" layoutY="318.0" />
+      <TextField fx:id="SN" layoutX="330.0" layoutY="353.0" prefHeight="26.0" prefWidth="47.0" />
+      <Text layoutX="228.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Number" />
    </children>
 </AnchorPane>
