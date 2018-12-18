@@ -98,10 +98,10 @@ public class RegisterController implements Initializable {
             Seller Account = new Seller();
             
             Account.setID(user);
+            Account.setSurname(sur);
             Account.setName(n);
             Account.setPassword(pw);
             Account.setPayment("None");
-            Account.setSurname(sur);
             Account.setGoodsID("0");
             
             session.save(Account);
