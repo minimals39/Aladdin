@@ -21,6 +21,11 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import java.util.*;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.*;
 
 /**
  * FXML Controller class
@@ -28,6 +33,7 @@ import javafx.stage.Stage;
  * @author japan
  */
 public class LoginController implements Initializable {
+
     @FXML
     private Button loginbutton;
     @FXML
@@ -38,6 +44,10 @@ public class LoginController implements Initializable {
     private RadioButton seller;
     @FXML
     private ImageView logo;
+    @FXML
+    private TextField Name;
+    @FXML
+    private PasswordField Pass;
 
     /**
      * Initializes the controller class.
@@ -48,13 +58,10 @@ public class LoginController implements Initializable {
         loginbutton.setDisable(true);
         Image image = new Image("/aladdin/seyana.PNG");
         logo.setImage(image);
-    }    
+    }
 
     @FXML
     private void login(ActionEvent event) throws IOException {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -110,54 +117,20 @@ public class LoginController implements Initializable {
                         closeStage();
                     }
                 }
-
+                   
             }
         } catch (Exception e) {
-=======
-=======
->>>>>>> parent of 569194d... Some Login edit
-=======
->>>>>>> parent of 569194d... Some Login edit
-        try{
-       if(buyer.isSelected()){     
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        closeStage();}
-       else if(seller.isSelected()){
-       Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        closeStage();
-       
-       }
-        }
-        
-        catch(Exception e){
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 569194d... Some Login edit
-=======
->>>>>>> parent of 569194d... Some Login edit
-=======
->>>>>>> parent of 569194d... Some Login edit
             System.out.println("Cant load new window");
         }
     }
-    
-        private void closeStage() {
-        ((Stage)loginbutton.getScene().getWindow()).close();
+
+    private void closeStage() {
+        ((Stage) loginbutton.getScene().getWindow()).close();
     }
 
     @FXML
-    private void register(ActionEvent event) throws IOException{
-        
+    private void register(ActionEvent event) throws IOException {
+
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/register/register.fxml"));
         Scene scene = new Scene(root);
@@ -171,5 +144,5 @@ public class LoginController implements Initializable {
     private void tick(ActionEvent event) {
         loginbutton.setDisable(false);
     }
-    
+
 }
