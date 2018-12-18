@@ -14,6 +14,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
@@ -69,26 +71,43 @@ public class RegisterController implements Initializable {
 
     @FXML
     private void confirm(ActionEvent event) throws IOException {
+        String user = username.getText(); 
+        String pw = pass.getText(); 
+        String pwch = passcheck.getText(); 
+        String n = name.getText(); 
+        String sur = surname.getText(); 
+        if (user.isEmpty()||pw.isEmpty()||pwch.isEmpty()||n.isEmpty()||sur.isEmpty()){
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setContentText("Please input all field");
+        alert.showAndWait();
+        
+        }
         if (buyer.isSelected()) {
-            Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("Hello World!");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+            openmain("buyer");
             closeStage();
 
         }
         else if (seller.isSelected()){
-           Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
+            openmain("seller");
+            closeStage();
+        
+        }
+    }
+    private void openmain(String type)throws IOException{
+        String resource = "";
+        if(type == "buyer"){
+           resource = "/aladdin/ui/main/main.fxml";
+        }
+           else{
+            resource = "/aladdin/ui/sellermain/sellermain.fxml";
+        }
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource(resource));
             Scene scene = new Scene(root);
             primaryStage.setTitle("Hello World!");
             primaryStage.setScene(scene);
             primaryStage.show();
-            closeStage();
-        
-        }
     }
 
     private void closeStage() {

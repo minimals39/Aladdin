@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1170.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.userinfo.UserinfoController">
+<AnchorPane id="AnchorPane" prefHeight="663.0" prefWidth="1170.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aladdin.ui.userinfo.UserinfoController">
     <stylesheets>
         <URL value="@userinfo.css" />
     </stylesheets>
@@ -14,7 +14,7 @@
       <Text layoutX="171.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
       <Text layoutX="171.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
       <Text layoutX="171.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment account" />
-      <Button layoutX="52.0" layoutY="188.0" mnemonicParsing="false" text="Choose pic" />
-      <Button layoutX="508.0" layoutY="350.0" mnemonicParsing="false" text="Edit" />
+      <Button layoutX="52.0" layoutY="188.0" mnemonicParsing="false" onAction="#pic" text="Choose pic" />
+      <Button layoutX="508.0" layoutY="350.0" mnemonicParsing="false" onAction="#edit" text="Edit" />
    </children>
 </AnchorPane>

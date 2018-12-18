@@ -4,17 +4,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.addproduct.AddproductController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aladdin.ui.addproduct.AddproductController">
     <stylesheets>
         <URL value="@addproduct.css" />
     </stylesheets>
    <children>
-      <Button layoutX="127.0" layoutY="310.0" mnemonicParsing="false" text="Choose image" />
+      <Button fx:id="img" layoutX="127.0" layoutY="310.0" mnemonicParsing="false" onAction="#uploadimg" text="Choose image" />
       <TextField layoutX="127.0" layoutY="21.0" promptText="Product name" />
       <TextField layoutX="127.0" layoutY="59.0" promptText="Price" />
       <TextArea layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
       <Button layoutX="452.0" layoutY="360.0" mnemonicParsing="false" text="Submit product" />
+      <ImageView fx:id="imgv1" fitHeight="135.0" fitWidth="126.0" layoutX="403.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/japan/Documents/NetBeansProjects/Pictures/seyana.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

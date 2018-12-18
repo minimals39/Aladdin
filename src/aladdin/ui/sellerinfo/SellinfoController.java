@@ -7,7 +7,10 @@ package aladdin.ui.sellerinfo;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -15,6 +18,8 @@ import javafx.fxml.Initializable;
  * @author japan
  */
 public class SellinfoController implements Initializable {
+    @FXML
+    private Button editbutton;
 
     /**
      * Initializes the controller class.
@@ -23,5 +28,9 @@ public class SellinfoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void edit(ActionEvent event) {
+    }
     
 }
