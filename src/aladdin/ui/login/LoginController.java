@@ -26,6 +26,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.apache.persistence.HibernateUtil;
 import org.hibernate.*;
+import aladdin.SellerData;
 
 /**
  * FXML Controller class
@@ -114,6 +115,14 @@ public class LoginController implements Initializable {
 
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
+                        
+                        SellerData Logged = new SellerData();
+                        Logged.setName(""+row.get("Name"));
+                        Logged.setSurname(""+row.get("Surname"));
+                        Logged.setPayment(""+row.get("Payment"));
+                        Logged.setGoodsID(""+row.get("GoodsID"));
+                        
+                        
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
                         Scene scene = new Scene(root);

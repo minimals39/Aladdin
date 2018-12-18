@@ -13,7 +13,7 @@ public class SellerData {
     private String name;
     private String surname;
     private String payment;
-    private String CustomerList;
+    private String GoodsID;
 
     public SellerData() {
     }
@@ -22,7 +22,7 @@ public class SellerData {
         this.name = name;
         this.surname = surname;
         this.payment = payment;
-        this.CustomerList = CustomerList;
+        this.GoodsID = CustomerList;
     }
 
 
@@ -49,12 +49,12 @@ public class SellerData {
     public void setPayment(String Payment) {
         this.payment = Payment;
     }
-    public String getCustomerList() {
-        return this.CustomerList;
+    public String getGoodsID() {
+        return this.GoodsID;
     }
 
-    public void setCustomerList(String CustomerList) {
-        this.CustomerList = CustomerList;
+    public void setGoodsID(String CustomerList) {
+        this.GoodsID = CustomerList;
     }
 }
 
