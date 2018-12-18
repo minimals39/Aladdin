@@ -90,12 +90,28 @@ public class RegisterController implements Initializable {
         alert.showAndWait();
         
         }
-        if (buyer.isSelected()) {
-            openmain("buyer");
+        if (seller.isSelected()) {
+            System.out.println("Maven + Hibernate + MySQL");
+            Session session = HibernateUtil.getSessionFactory().openSession();
+
+            session.beginTransaction();
+            Seller Account = new Seller();
+            
+            Account.setID(user);
+            Account.setName(n);
+            Account.setPassword(pw);
+            Account.setPayment("None");
+            Account.setSurname(sur);
+            Account.setGoodsID("0");
+            
+            session.save(Account);
+            session.getTransaction().commit();
+            
+            openmain("seller");
             closeStage();
 
         }
-        else if (seller.isSelected()){
+        else if (buyer.isSelected()){
             System.out.println("Maven + Hibernate + MySQL");
             Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -107,12 +123,11 @@ public class RegisterController implements Initializable {
             Account.setSurname(sur);
             Account.setPassword(pw);
             Account.setPayment("None");
-            Account.setGoodsID("1");
-            Account.setAddress("None");
+            Account.setAddress("None");     
             
             session.save(Account);
             session.getTransaction().commit();            
-            openmain("seller");
+            openmain("buyer");
             closeStage();
         
         }

@@ -66,11 +66,14 @@ public class LoginController implements Initializable {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        
+        try {
             if (buyer.isSelected()) {
+
                 String user = Name.getText();
                 String pass = Pass.getText();
                 String sql = "SELECT * FROM aladdin.Customer WHERE ID= " + user;
+                System.out.println("4");
+
                 SQLQuery query = session.createSQLQuery(sql);
                 query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                 List data = query.list();
@@ -94,9 +97,12 @@ public class LoginController implements Initializable {
 
             } else if (seller.isSelected()) {
 
+                
+
                 String user = Name.getText();
                 String pass = Pass.getText();
                 String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + user;
+
                 SQLQuery query = session.createSQLQuery(sql);
                 query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                 List data = query.list();
@@ -117,9 +123,11 @@ public class LoginController implements Initializable {
                         closeStage();
                     }
                 }
-                   
+
             }
-        
+        } catch (Exception e) {
+            System.out.println("Cant load new window");
+        }
     }
 
     private void closeStage() {
