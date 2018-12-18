@@ -10,6 +10,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
@@ -17,12 +21,43 @@ import javafx.fxml.Initializable;
  * @author japan
  */
 public class UserinfoController implements Initializable {
+    @FXML
+    private ImageView profpic;
+    @FXML
+    private TextField Name;
+    @FXML
+    private TextField Surname;
+    @FXML
+    private TextArea Address;
+    @FXML
+    private TextField card;
+    @FXML
+    private TextField SN;
+    @FXML
+    private Button edit;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Name.setDisable(true);
+        Surname.setDisable(true);
+        Address.setDisable(true);
+        card.setDisable(true);
+        SN.setDisable(true);
+        
+        String name = "";
+        String surname = "";
+        String Address = "";
+        String card = "";
+        String sec = "";
+        
+        Name.setText(name);
+        Name.setText(surname);
+        Name.setText(Address);
+        Name.setText(card);
+        Name.setText(sec);
         // TODO
     }    
 
@@ -32,6 +67,7 @@ public class UserinfoController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
+        
     }
     
 }
