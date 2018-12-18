@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1170.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.category.CategoryController">
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1170.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aladdin.ui.category.CategoryController">
     <stylesheets>
         <URL value="@category.css" />
     </stylesheets>
@@ -27,8 +27,8 @@
             <Button mnemonicParsing="false" prefHeight="319.0" prefWidth="740.0" text="Kids" GridPane.rowIndex="1" />
             <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="858.0" text="Clothes" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="881.0" text="Computer and Electronics" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="660.0" text="Shoes and bags" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="857.0" text="Cars" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="660.0" text="Tools" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" prefHeight="224.0" prefWidth="857.0" text="Other" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>
