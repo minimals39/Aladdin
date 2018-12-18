@@ -16,10 +16,10 @@
     </stylesheets>
    <children>
       <Button fx:id="img" layoutX="127.0" layoutY="310.0" mnemonicParsing="false" onAction="#uploadimg" text="Choose image" />
-      <TextField fx:id="PdName" layoutX="127.0" layoutY="21.0" prefHeight="26.0" prefWidth="200.0" promptText="Product name" />
-      <TextField fx:id="Price" layoutX="127.0" layoutY="59.0" prefHeight="26.0" prefWidth="132.0" promptText="Price" />
-      <TextArea fx:id="PdInfo" layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
-      <Button fx:id="Submit" layoutX="452.0" layoutY="360.0" mnemonicParsing="false" onAction="#Submit" text="Submit product" />
+      <TextField layoutX="127.0" layoutY="21.0" promptText="Product name" />
+      <TextField layoutX="127.0" layoutY="59.0" promptText="Price" />
+      <TextArea layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
+      <Button layoutX="452.0" layoutY="360.0" mnemonicParsing="false" text="Submit product" />
       <ImageView fx:id="imgv1" fitHeight="135.0" fitWidth="126.0" layoutX="403.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Pictures/seyana.PNG" />
@@ -34,6 +34,5 @@
       <RadioButton fx:id="Clothes" layoutX="353.0" layoutY="275.0" mnemonicParsing="false" text="Clothes" toggleGroup="$category" />
       <RadioButton fx:id="Tools" layoutX="458.0" layoutY="244.0" mnemonicParsing="false" text="Tools" toggleGroup="$category" />
       <RadioButton fx:id="Other" layoutX="458.0" layoutY="275.0" mnemonicParsing="false" text="Other" toggleGroup="$category" />
-      <TextField fx:id="amount" layoutX="265.0" layoutY="59.0" prefHeight="26.0" prefWidth="62.0" promptText="amount" />
    </children>
 </AnchorPane>

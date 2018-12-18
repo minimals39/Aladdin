@@ -52,8 +52,8 @@
         <property name="payment" type="string">
             <column name="Payment" length="20" not-null="true" unique="false" />
         </property>
-        <property name="GoodsID" type="string">
-            <column name="GoodsID" length="100" not-null="true" unique="false" />
+        <property name="CustomerList" type="string">
+            <column name="CustomerList" length="100" not-null="true" unique="false" />
         </property>
     </class>
 
@@ -66,7 +66,7 @@
             <column name="Price" length="20" not-null="true" unique="false" />
         </property>
         <property name="detail" type="string">
-            <column name="Detail" length="100" not-null="true" unique="false" />
+            <column name="Detail" length="20" not-null="true" unique="false" />
         </property>
         <property name="name" type="string">
             <column name="Name" length="20" not-null="true" unique="false" />
