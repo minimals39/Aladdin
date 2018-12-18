@@ -123,7 +123,8 @@ public class RegisterController implements Initializable {
             Account.setPassword(pw);
             Account.setPayment("None");
             session.save(Account);
-            session.getTransaction().commit();            
+            session.getTransaction().commit();          
+            
             openmain("seller");
             closeStage();
         

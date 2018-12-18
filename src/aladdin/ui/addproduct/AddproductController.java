@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -38,6 +39,18 @@ public class AddproductController implements Initializable {
     private TextArea Info;
     @FXML
     private Button Submit;
+    @FXML
+    private RadioButton sport;
+    @FXML
+    private RadioButton computer;
+    @FXML
+    private RadioButton kids;
+    @FXML
+    private RadioButton clothes;
+    @FXML
+    private RadioButton tool;
+    @FXML
+    private RadioButton other;
     /**
      * Initializes the controller class.
      */
