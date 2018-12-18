@@ -54,6 +54,7 @@ public class LoginController implements Initializable {
     private void login(ActionEvent event) throws IOException {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
@@ -115,6 +116,8 @@ public class LoginController implements Initializable {
 =======
 =======
 >>>>>>> parent of 569194d... Some Login edit
+=======
+>>>>>>> parent of 569194d... Some Login edit
         try{
        if(buyer.isSelected()){     
         Stage primaryStage = new Stage();
@@ -138,6 +141,9 @@ public class LoginController implements Initializable {
         
         catch(Exception e){
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 569194d... Some Login edit
+=======
 >>>>>>> parent of 569194d... Some Login edit
 =======
 >>>>>>> parent of 569194d... Some Login edit
