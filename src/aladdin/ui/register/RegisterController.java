@@ -22,6 +22,10 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
+import org.apache.maven.Customer;
+import org.apache.maven.Seller;
+import org.hibernate.Session;
+import org.apache.persistence.HibernateUtil;
 
 /**
  * FXML Controller class
@@ -76,6 +80,9 @@ public class RegisterController implements Initializable {
         String pwch = passcheck.getText(); 
         String n = name.getText(); 
         String sur = surname.getText(); 
+        
+
+        
         if (user.isEmpty()||pw.isEmpty()||pwch.isEmpty()||n.isEmpty()||sur.isEmpty()){
         Alert alert = new Alert(AlertType.ERROR);
         alert.setHeaderText(null);
@@ -89,6 +96,19 @@ public class RegisterController implements Initializable {
 
         }
         else if (seller.isSelected()){
+            System.out.println("Maven + Hibernate + MySQL");
+            Session session = HibernateUtil.getSessionFactory().openSession();
+
+            session.beginTransaction();
+            Customer Account = new Customer();
+
+            Account.setID(user);
+            Account.setName(n);
+            Account.setSurname(sur);
+            Account.setPassword(pw);
+            Account.setPayment("None");
+            session.save(Account);
+            session.getTransaction().commit();            
             openmain("seller");
             closeStage();
         

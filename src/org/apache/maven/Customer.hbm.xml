@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="org.apache.maven.Customer" table="customer" catalog="aladdin">
+        <id name="no" type="java.lang.Integer">
+            <column name="No" />
+            <generator class="identity" />
+        </id>
+        <property name="ID" type="string">
+            <column name="ID" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="surname" type="string">
+            <column name="Surname" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="payment" type="string">
+            <column name="payment" length="20" not-null="true" unique="false" />
+        </property>
+    </class>
+
+
+    <class name="org.apache.maven.Seller" table="Seller" catalog="aladdin">
+        <id name="no" type="java.lang.Integer">
+            <column name="No" />
+            <generator class="identity" />
+        </id>
+        <property name="ID" type="string">
+            <column name="ID" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="surname" type="string">
+            <column name="Surname" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="password" type="string">
+            <column name="Password" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="payment" type="string">
+            <column name="Payment" length="20" not-null="true" unique="false" />
+        </property>
+    </class>
+
+    <class name="org.apache.maven.Goods" table="Goods" catalog="aladdin">
+        <id name="no" type="java.lang.Integer">
+            <column name="No" />
+            <generator class="identity" />
+        </id>
+        <property name="price" type="string">
+            <column name="Price" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="detail" type="string">
+            <column name="Detail" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="name" type="string">
+            <column name="Name" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="seller" type="string">
+            <column name="Seller" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="quantity" type="string">
+            <column name="Quantity" length="20" not-null="true" unique="false" />
+        </property>
+    </class>
+</hibernate-mapping>
+

@@ -3,47 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/LoginController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerinfo/sellinfo.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellermain/SellermainController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/itempage/itempage.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/checkoutpage/checkoutpage.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/main.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/showproduct/ShowproductController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/category/category.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/login.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/loginloader.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/register.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/category/category.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/login/login.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/main.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/addproduct/addproduct.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerproduct/sellerproduct.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/mainloader.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/searchpage/searchpage.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/main/MainController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/addproduct/addproduct.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/searchpage/searchpage.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/showproduct/showproduct.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellermain/sellermain.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/checkoutpage/CheckoutpageController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/userinfo/userinfo.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/register.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerproduct/sellerproduct.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/addproduct/AddproductController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/category/CategoryController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerproduct/SellerproductController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerinfo/sellinfo.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/sellerinfo/SellinfoController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/itempage/ItempageController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/itempage/itempage.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/Aladdin.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/showproduct/showproduct.fxml</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/userinfo/userinfo.css</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/searchpage/SearchpageController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/userinfo/UserinfoController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/register/RegisterController.java</file>
-            <file>file:/C:/Users/japan/Documents/NetBeansProjects/aladdin/src/aladdin/ui/checkoutpage/checkoutpage.fxml</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/aladdin/Aladdin.java</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/org/apache/maven/Customer.hbm.xml</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/org/apache/maven/App.java</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/aladdin/ui/login/LoginController.java</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/aladdin/ui/register/RegisterController.java</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/src/org/apache/maven/Customer.java</file>
+            <file>file:/C:/Users/WIN10/Documents/GitHub/Aladdin/nbproject/jfx-impl.xml</file>
         </group>
     </open-files>
 </project-private>
