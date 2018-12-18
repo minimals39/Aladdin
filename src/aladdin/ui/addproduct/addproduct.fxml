@@ -15,7 +15,7 @@
         <URL value="@addproduct.css" />
     </stylesheets>
    <children>
-      <Button fx:id="img" layoutX="127.0" layoutY="310.0" mnemonicParsing="false" onAction="#uploadimg" text="Choose image" />
+      <Button fx:id="img" layoutX="127.0" layoutY="312.0" mnemonicParsing="false" onAction="#uploadimg" text="Choose image" />
       <TextField layoutX="127.0" layoutY="21.0" promptText="Product name" />
       <TextField layoutX="127.0" layoutY="59.0" promptText="Price" />
       <TextArea layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
