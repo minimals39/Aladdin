@@ -66,7 +66,7 @@ public class LoginController implements Initializable {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        try {
+        
             if (buyer.isSelected()) {
                 String user = Name.getText();
                 String pass = Pass.getText();
@@ -119,9 +119,7 @@ public class LoginController implements Initializable {
                 }
                    
             }
-        } catch (Exception e) {
-            System.out.println("Cant load new window");
-        }
+        
     }
 
     private void closeStage() {
