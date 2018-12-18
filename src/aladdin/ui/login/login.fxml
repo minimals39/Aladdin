@@ -16,7 +16,11 @@
     </stylesheets>
    <children>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <TextField fx:id="Name" layoutX="126.0" layoutY="158.0" promptText="Username" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+=======
+      <TextField fx:id="Name" layoutX="75.0" layoutY="150.0" promptText="Username" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
+>>>>>>> Stashed changes
 =======
       <TextField fx:id="Name" layoutX="75.0" layoutY="150.0" promptText="Username" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" />
 >>>>>>> Stashed changes
