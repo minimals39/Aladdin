@@ -63,9 +63,13 @@ public class LoginController implements Initializable {
 
     @FXML
     private void login(ActionEvent event) throws IOException {
+        System.out.println("Can We get here 1");
 
         Session session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("Can We get here 2");
         session.beginTransaction();
+        System.out.println("Can We get here 3");
+        
 
         try {
             if (buyer.isSelected()) {
@@ -99,7 +103,7 @@ public class LoginController implements Initializable {
             } else if (seller.isSelected()) {
 
                 
-
+                System.out.println("Can We get here");
                 String user = Name.getText();
                 String pass = Pass.getText();
                 String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + user;
