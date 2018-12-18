@@ -14,10 +14,10 @@
     </stylesheets>
    <children>
       <Button fx:id="img" layoutX="127.0" layoutY="310.0" mnemonicParsing="false" onAction="#uploadimg" text="Choose image" />
-      <TextField layoutX="127.0" layoutY="21.0" promptText="Product name" />
-      <TextField layoutX="127.0" layoutY="59.0" promptText="Price" />
-      <TextArea layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
-      <Button layoutX="452.0" layoutY="360.0" mnemonicParsing="false" text="Submit product" />
+      <TextField fx:id="PdName" layoutX="127.0" layoutY="21.0" promptText="Product name" />
+      <TextField fx:id="Prize" layoutX="127.0" layoutY="59.0" promptText="Price" />
+      <TextArea fx:id="Info" layoutX="127.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" promptText="Product Information" />
+      <Button fx:id="Submit" layoutX="452.0" layoutY="360.0" mnemonicParsing="false" text="Submit product" />
       <ImageView fx:id="imgv1" fitHeight="135.0" fitWidth="126.0" layoutX="403.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="file:/C:/Users/japan/Documents/NetBeansProjects/Pictures/seyana.PNG" />

@@ -13,6 +13,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -28,6 +30,14 @@ public class AddproductController implements Initializable {
     private Button img;
     @FXML
     private ImageView imgv1;
+    @FXML
+    private TextField PdName;
+    @FXML
+    private TextField Prize;
+    @FXML
+    private TextArea Info;
+    @FXML
+    private Button Submit;
     /**
      * Initializes the controller class.
      */
