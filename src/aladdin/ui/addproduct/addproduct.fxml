@@ -5,6 +5,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -24,11 +25,14 @@
             <Image url="@../../../../../../../Pictures/seyana.PNG" />
          </image>
       </ImageView>
-      <RadioButton layoutX="352.0" layoutY="217.0" mnemonicParsing="false" text="Sports" />
-      <RadioButton layoutX="458.0" layoutY="217.0" mnemonicParsing="false" text="Computer" />
-      <RadioButton layoutX="353.0" layoutY="244.0" mnemonicParsing="false" text="Kids" />
-      <RadioButton layoutX="353.0" layoutY="275.0" mnemonicParsing="false" text="Clothes" />
-      <RadioButton layoutX="458.0" layoutY="244.0" mnemonicParsing="false" text="Tools" />
-      <RadioButton layoutX="458.0" layoutY="275.0" mnemonicParsing="false" text="Other" />
+      <RadioButton fx:id="sports" layoutX="352.0" layoutY="217.0" mnemonicParsing="false" text="Sports">
+         <toggleGroup>
+            <ToggleGroup fx:id="category" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="computer" layoutX="458.0" layoutY="217.0" mnemonicParsing="false" text="Computer" toggleGroup="$category" />
+      <RadioButton fx:id="Kids" layoutX="353.0" layoutY="244.0" mnemonicParsing="false" text="Kids" toggleGroup="$category" />
+      <RadioButton fx:id="Clothes" layoutX="353.0" layoutY="275.0" mnemonicParsing="false" text="Clothes" toggleGroup="$category" />
+      <RadioButton fx:id="Tools" layoutX="458.0" layoutY="244.0" mnemonicParsing="false" text="Tools" toggleGroup="$category" />
+      <RadioButton fx:id="Other" layoutX="458.0" layoutY="275.0" mnemonicParsing="false" text="Other" toggleGroup="$category" />
    </children>
 </AnchorPane>
