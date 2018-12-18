@@ -80,5 +80,15 @@ public class SellermainController implements Initializable {
         ((Stage)showpane.getScene().getWindow()).close();
     }
 
+    @FXML
+    private void order(ActionEvent event) throws IOException{
+    Pane newLoadedPane =  FXMLLoader.load(getClass().getResource("/aladdin/ui/order/order.fxml"));
+    showpane.getChildren().clear();
+    showpane.getChildren().add(newLoadedPane);
+
+        
+        
+    }
+
     
 }

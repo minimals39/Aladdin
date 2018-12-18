@@ -60,10 +60,10 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="25.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" />
-                  <Text layoutX="237.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ItemName: " />
-                  <Text layoutX="237.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information" />
+                  <Text fx:id="itemname" layoutX="237.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ItemName: " />
+                  <Text fx:id="iteminfo" layoutX="237.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Information" />
                   <AnchorPane layoutX="25.0" layoutY="17.0" onMouseClicked="#itemwindow" prefHeight="200.0" prefWidth="200.0" />
-                  <Button layoutX="462.0" layoutY="175.0" mnemonicParsing="false" text="Button" />
+                  <Button layoutX="462.0" layoutY="175.0" mnemonicParsing="false" onAction="#addtocart" text="Add to cart" />
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="184.0" prefWidth="446.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
