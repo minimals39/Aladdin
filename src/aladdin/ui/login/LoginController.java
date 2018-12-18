@@ -21,6 +21,11 @@ import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import java.util.*;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.*;
 
 /**
  * FXML Controller class
@@ -28,6 +33,7 @@ import javafx.stage.Stage;
  * @author japan
  */
 public class LoginController implements Initializable {
+
     @FXML
     private Button loginbutton;
     @FXML
@@ -38,6 +44,10 @@ public class LoginController implements Initializable {
     private RadioButton seller;
     @FXML
     private ImageView logo;
+    @FXML
+    private TextField Name;
+    @FXML
+    private PasswordField Pass;
 
     /**
      * Initializes the controller class.
@@ -48,43 +58,79 @@ public class LoginController implements Initializable {
         loginbutton.setDisable(true);
         Image image = new Image("/aladdin/seyana.PNG");
         logo.setImage(image);
-    }    
+    }
 
     @FXML
     private void login(ActionEvent event) throws IOException {
-        try{
-       if(buyer.isSelected()){     
-        Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        closeStage();}
-       else if(seller.isSelected()){
-       Stage primaryStage = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        closeStage();
-       
-       }
-        }
-        
-        catch(Exception e){
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+
+        try {
+            if (buyer.isSelected()) {
+                String user = Name.getText();
+                String pass = Pass.getText();
+                String sql = "SELECT * FROM aladdin.Customer WHERE ID= " + user;
+                SQLQuery query = session.createSQLQuery(sql);
+                query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+                List data = query.list();
+                System.out.println(pass);
+                for (Object object : data) {
+                    Map row = (Map) object;
+                    System.out.print("First Name: " + row.get("Name"));
+                    System.out.println(", Pass: " + row.get("Password"));
+
+                    if (pass.equals(row.get("Password"))) {
+                        System.out.println(", Correct " + row.get("Password"));
+                        Stage primaryStage = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
+                        Scene scene = new Scene(root);
+                        primaryStage.setTitle("Hello World!");
+                        primaryStage.setScene(scene);
+                        primaryStage.show();
+                        closeStage();
+                    }
+                }
+
+            } else if (seller.isSelected()) {
+
+                String user = Name.getText();
+                String pass = Pass.getText();
+                String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + user;
+                SQLQuery query = session.createSQLQuery(sql);
+                query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+                List data = query.list();
+                System.out.println(pass);
+                for (Object object : data) {
+                    Map row = (Map) object;
+                    System.out.print("First Name: " + row.get("Name"));
+                    System.out.println(", Pass: " + row.get("Password"));
+
+                    if (pass.equals(row.get("Password"))) {
+                        System.out.println(", Correct " + row.get("Password"));
+                        Stage primaryStage = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
+                        Scene scene = new Scene(root);
+                        primaryStage.setTitle("Hello World!");
+                        primaryStage.setScene(scene);
+                        primaryStage.show();
+                        closeStage();
+                    }
+                }
+                   
+            }
+        } catch (Exception e) {
             System.out.println("Cant load new window");
         }
     }
-    
-        private void closeStage() {
-        ((Stage)loginbutton.getScene().getWindow()).close();
+
+    private void closeStage() {
+        ((Stage) loginbutton.getScene().getWindow()).close();
     }
 
     @FXML
-    private void register(ActionEvent event) throws IOException{
-        
+    private void register(ActionEvent event) throws IOException {
+
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/register/register.fxml"));
         Scene scene = new Scene(root);
@@ -98,5 +144,5 @@ public class LoginController implements Initializable {
     private void tick(ActionEvent event) {
         loginbutton.setDisable(false);
     }
-    
+
 }

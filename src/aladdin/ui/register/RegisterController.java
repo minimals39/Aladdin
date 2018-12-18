@@ -107,6 +107,9 @@ public class RegisterController implements Initializable {
             Account.setSurname(sur);
             Account.setPassword(pw);
             Account.setPayment("None");
+            Account.setGoodsID("1");
+            Account.setAddress("None");
+            
             session.save(Account);
             session.getTransaction().commit();            
             openmain("seller");
