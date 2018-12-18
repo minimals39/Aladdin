@@ -11,17 +11,18 @@ public class Customer implements java.io.Serializable {
     private String password;
     private String payment;
     private String GoodsID;
-
+    private String Address;
     public Customer() {
     }
 
-    public Customer(String name, String surname, String id, String password, String payment ,String goodid) {
+    public Customer(String name, String surname, String id, String password, String payment ,String goodid ,String Address) {
         this.name = name;
         this.surname = surname;
         this.ID = id;
         this.password = password;
         this.payment = payment;
         this.GoodsID = goodid;
+        this.Address = Address;
     }
 
     public Integer getNo() {
@@ -75,5 +76,13 @@ public class Customer implements java.io.Serializable {
 
     public void setGoodsID(String GoodsID) {
         this.GoodsID = GoodsID;
+    }
+    
+    public String getAddress() {
+    return this.Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 }
