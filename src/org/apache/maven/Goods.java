@@ -1,12 +1,8 @@
 package org.apache.maven;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
-=======
 import aladdin.CustomerData;
-import aladdin.cart;
->>>>>>> FinalVersion
 import org.hibernate.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
