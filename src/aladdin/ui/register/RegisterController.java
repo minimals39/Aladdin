@@ -112,6 +112,7 @@ public class RegisterController implements Initializable {
         alert.showAndWait();
         
         }
+        else{
         if (seller.isSelected()) {
             System.out.println("Maven + Hibernate + MySQL");
             Session session = HibernateUtil.getSessionFactory().openSession();
@@ -153,7 +154,7 @@ public class RegisterController implements Initializable {
             openmain("buyer");
             closeStage();
         
-        }
+        }}
     }
     private void openmain(String type)throws IOException{
         String resource = "";
