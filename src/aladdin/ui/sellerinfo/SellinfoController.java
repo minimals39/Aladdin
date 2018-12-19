@@ -5,6 +5,7 @@
  */
 package aladdin.ui.sellerinfo;
 
+import aladdin.SellerData;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
@@ -42,13 +43,17 @@ public class SellinfoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        
         System.out.println("Can We get here 1");
 
         Session session = HibernateUtil.getSessionFactory().openSession();
         System.out.println("Can We get here 2");
         session.beginTransaction();
         System.out.println("Can We get here 3");
-
+        
+        SellerData sellerdata = SellerData.getinstance();
+        System.out.println(sellerdata.getName());
         String sql = "SELECT * FROM aladdin.Seller WHERE ID= 'TestSeller'";
         System.out.println("4");
 
@@ -57,10 +62,12 @@ public class SellinfoController implements Initializable {
         List data = query.list();
         for (Object object : data) {
             Map row = (Map) object;
-            inName.setText(""+row.get("Name"));
-            InSurname.setText(""+row.get("Surname"));
-            InInfo.setText(""+row.get("ID"));
-            InPayment.setText(""+row.get("Payment"));
+            /*inName.setText(""+row.get("Name"));
+            InSurname.setText(""+row.get("Surname"));*/
+            inName.setText(sellerdata.getName());
+            InSurname.setText(sellerdata.getSurname());
+            InInfo.setText(sellerdata.getGoodsID());
+            InPayment.setText(sellerdata.getPayment());
         }
 
     }

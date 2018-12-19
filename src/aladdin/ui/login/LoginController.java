@@ -93,12 +93,12 @@ public class LoginController implements Initializable {
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
                         
-                        CustomerData logged = new CustomerData();
+                        /*CustomerData logged = new CustomerData();
                         
                         logged.setGoodsID(""+row.get("GoodsID"));
                         logged.setName(""+row.get("Name"));
                         logged.setPayment(""+row.get("payment"));
-                        logged.setSurname(""+row.get("Surname"));
+                        logged.setSurname(""+row.get("Surname"));*/
                         
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
@@ -125,7 +125,14 @@ public class LoginController implements Initializable {
                 System.out.println("Can We get here");
                 String user = Name.getText();
                 String pass = Pass.getText();
-                String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + user;
+                
+                String newString = '\''+ user + '\'';
+                String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + newString;
+
+                
+                //String sql = "SELECT * FROM aladdin.Seller WHERE ID= " + user;
+                
+                //String sql = "SELECT * FROM aladdin.Seller WHERE ID CONTAINS "+ user;
 
                 SQLQuery query = session.createSQLQuery(sql);
                 query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
@@ -139,8 +146,10 @@ public class LoginController implements Initializable {
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
                         SellerData sellerdata = SellerData.getinstance();
-                        sellerdata.setName(user);
-                        /*sellerdata.setSurname(sql);*/
+                        sellerdata.setName(""+row.get("Name"));
+                        sellerdata.setSurname(""+row.get("Surname"));
+                        sellerdata.setPayment(""+row.get("Payment"));
+                        sellerdata.setGoodsID(""+row.get("GoodsID"));
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
                         Scene scene = new Scene(root);
