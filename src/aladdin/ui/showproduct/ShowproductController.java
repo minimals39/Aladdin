@@ -60,7 +60,7 @@ public class ShowproductController implements Initializable {
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
         info.setCellValueFactory(new PropertyValueFactory<>("price"));
         price.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        action.setCellValueFactory(new PropertyValueFactory<>("btn"));
+        action.setCellValueFactory(new PropertyValueFactory<>("addtocart"));
 
         //add your data to the table here.
         Load();
@@ -87,17 +87,18 @@ public class ShowproductController implements Initializable {
             List data = query.list();
             if (data == null || number > 20){break;}
             for (Object object : data) {
-                /*
-                fix input for showgoodstable
                 
                 Map row = (Map) object;
                 String name = (String) row.get("Name");
                 String price = (String) row.get("Price");
                 String quan = (String) row.get("Quantity");
+                String owner = (String) row.get("Seller");
+                String DT = (String) row.get("Detail");
+                
                
-                GoodsList.add(new Goods(name, price, quan, "TempSeller", "Ready"));
+                GoodsList.add(new Goods(name, price, DT, owner, quan));
 //               Goods(String name, String price, String detail, String seller, String quantity)
-                 */
+                 
 
             }
             number++;

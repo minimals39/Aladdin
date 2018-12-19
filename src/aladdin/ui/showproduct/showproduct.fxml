@@ -13,8 +13,8 @@
       <TableView fx:id="Table" prefHeight="670.0" prefWidth="1170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
           <TableColumn fx:id="iname" prefWidth="327.1999939084053" text="Item Name" />
-          <TableColumn fx:id="info" prefWidth="532.0000610351562" text="Information" />
-            <TableColumn fx:id="price" prefWidth="144.79989624023438" text="Price" />
+          <TableColumn fx:id="info" prefWidth="532.0000610351562" text="Price" />
+            <TableColumn fx:id="price" prefWidth="144.79989624023438" text="Left" />
             <TableColumn fx:id="action" prefWidth="167.19998168945312" />
         </columns>
       </TableView>
