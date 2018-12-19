@@ -50,25 +50,16 @@ public class SellerproductController implements Initializable {
     private void Load() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
-        int number = 1;
-        while (true) {
-            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
-            SQLQuery query = session.createSQLQuery(sql);
-            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-            List data = query.list();
-            if (data == null) {
-                break;
-            }
-            for (Object object : data) {
-                Map row = (Map) object;
-                String name = (String) row.get("name");
-                String price = (String) row.get("price");
-                String quan = (String) row.get("quantity");
+        List goods = session.createSQLQuery("FROM aladdin.Goods").list();
+        for(Iterator iterator = goods.iterator(); iterator.hasNext();) {
+            Goods good = (Goods) iterator.next();
+            String name = good.getName();
+            String price = good.getPrice();
+            String quan = good.getQuantity();
 
                 GoodsList.add(new Goods(name, price, quan, "temp", "temp"));
 //               Goods(String name, String price, String detail, String seller, String quantity)
-            }
-            Table.getItems().setAll(GoodsList);
+            
 
         }
     }
