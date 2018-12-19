@@ -5,6 +5,7 @@
  */
 package aladdin.ui.sellerproduct;
 
+import aladdin.SellerData;
 import java.util.*;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,12 +54,18 @@ public class SellerproductController implements Initializable {
         session.beginTransaction();
 
         int number = 1;
+        SellerData sellerdata = SellerData.getinstance();
+        System.out.println(sellerdata.getName());
+        String Owner = sellerdata.getName();
+
         while (true) {
             String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
-            if (data == null || number > 20){break;}
+            if (data == null || number > 20) {
+                break;
+            }
             for (Object object : data) {
                 Map row = (Map) object;
                 String name = (String) row.get("Name");
@@ -66,14 +73,19 @@ public class SellerproductController implements Initializable {
                 String quan = (String) row.get("Quantity");
                 String owner = (String) row.get("Seller");
                 String DT = (String) row.get("Detail");
-                
-                //if()
-                GoodsList.add(new Goods(name, price, quan,owner, DT));
+
+                if (Owner.equals(owner)) {
+                    GoodsList.add(new Goods(name, price, quan, owner, DT));
+                }
+                else
+                {
+                    System.out.println(""+Owner );
+                    System.out.println(" "+owner );
+                }
 //               Goods(String name, String price, String detail, String seller, String quantity)
-                
 
             }
             number++;
         }
-    
-}
+
+    }
