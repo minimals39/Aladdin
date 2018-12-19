@@ -7,7 +7,9 @@ package aladdin.ui.SellerOrder;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
 
 /**
  * FXML Controller class
@@ -15,6 +17,12 @@ import javafx.fxml.Initializable;
  * @author japan
  */
 public class SellerOrderController implements Initializable {
+    @FXML
+    private TableColumn<?, ?> iname;
+    @FXML
+    private TableColumn<?, ?> buyer;
+    @FXML
+    private TableColumn<?, ?> buyeraddr;
 
     /**
      * Initializes the controller class.
