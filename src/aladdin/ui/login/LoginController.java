@@ -78,7 +78,9 @@ public class LoginController implements Initializable {
 
                 String user = Name.getText();
                 String pass = Pass.getText();
-                String sql = "SELECT * FROM aladdin.Customer WHERE ID= " + user;
+                String newString = '\''+ user + '\'';
+                String sql = "SELECT * FROM aladdin.Customer WHERE ID= " + newString;
+                
                 System.out.println("4");
 
                 SQLQuery query = session.createSQLQuery(sql);
@@ -93,12 +95,8 @@ public class LoginController implements Initializable {
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
                         
-                        /*CustomerData logged = new CustomerData();
-                        
-                        logged.setGoodsID(""+row.get("GoodsID"));
-                        logged.setName(""+row.get("Name"));
-                        logged.setPayment(""+row.get("payment"));
-                        logged.setSurname(""+row.get("Surname"));*/
+                        CustomerData customerData = CustomerData.getInstance();
+                        customerData.setName(""+row.get("Name"));
                         
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
@@ -115,6 +113,7 @@ public class LoginController implements Initializable {
                         
                     }
                     else{
+                        System.out.println(row.get("Password"));
                     
                     }
                 }

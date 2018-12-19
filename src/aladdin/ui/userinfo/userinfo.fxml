@@ -25,11 +25,11 @@
             <Image url="@../../../../../../../Pictures/seyana.PNG" />
          </image>
       </ImageView>
-      <TextField fx:id="Name" layoutX="228.0" layoutY="34.0" />
-      <TextField fx:id="Surname" layoutX="228.0" layoutY="74.0" />
-      <TextArea fx:id="Address" layoutX="228.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextField fx:id="card" layoutX="228.0" layoutY="318.0" />
-      <TextField fx:id="SN" layoutX="330.0" layoutY="353.0" prefHeight="26.0" prefWidth="47.0" />
+      <TextField fx:id="Name" layoutX="279.0" layoutY="35.0" />
+      <TextField fx:id="Surname" layoutX="279.0" layoutY="75.0" />
+      <TextArea fx:id="Address" layoutX="279.0" layoutY="113.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextField fx:id="card" layoutX="330.0" layoutY="319.0" />
+      <TextField fx:id="SN" layoutX="431.0" layoutY="352.0" prefHeight="26.0" prefWidth="47.0" promptText="****" />
       <Text layoutX="228.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Security Number" />
    </children>
 </AnchorPane>
