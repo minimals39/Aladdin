@@ -7,16 +7,28 @@ package aladdin.ui.showproduct;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.apache.maven.Goods;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
@@ -25,17 +37,17 @@ import javafx.stage.Stage;
  */
 public class ShowproductController implements Initializable {
     @FXML
-    private AnchorPane a3;
+    private TableView<Goods> Table;
     @FXML
-    private AnchorPane a1;
+    private TableColumn<Goods, String> iname;
     @FXML
-    private AnchorPane a4;
+    private TableColumn<Goods, String> info;
     @FXML
-    private AnchorPane a2;
+    private TableColumn<Goods, String> price;
     @FXML
-    private AnchorPane a0;
-    @FXML
-    private AnchorPane a5;
+    private TableColumn<Goods, String> action;
+    
+    private ObservableList<Goods> GoodsList = FXCollections.observableArrayList();
 
  
     /**
@@ -44,8 +56,17 @@ public class ShowproductController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+                //make sure the property value factory should be exactly same as the e.g getStudentId from your model class
+        iname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        info.setCellValueFactory(new PropertyValueFactory<>("price"));
+        price.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        action.setCellValueFactory(new PropertyValueFactory<>("btn"));
+
+        //add your data to the table here.
+        Load();
+        
+        Table.setItems(GoodsList);
     }    
-    @FXML
         private void itemwindow(MouseEvent event) throws IOException {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/itempage/itempage.fxml"));
@@ -54,9 +75,35 @@ public class ShowproductController implements Initializable {
         primaryStage.setScene(scene);
         primaryStage.show();
     }
+    private void Load() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
 
-    @FXML
-    private void addtocart(ActionEvent event) {
-    }
+        int number = 1;
+        while (true) {
+            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
+            SQLQuery query = session.createSQLQuery(sql);
+            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+            List data = query.list();
+            if (data == null || number > 20){break;}
+            for (Object object : data) {
+                /*
+                fix input for showgoodstable
+                
+                Map row = (Map) object;
+                String name = (String) row.get("Name");
+                String price = (String) row.get("Price");
+                String quan = (String) row.get("Quantity");
+               
+                GoodsList.add(new Goods(name, price, quan, "TempSeller", "Ready"));
+//               Goods(String name, String price, String detail, String seller, String quantity)
+                 */
+
+            }
+            number++;
+        }
+    
+}
+
 
 }

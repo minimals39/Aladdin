@@ -1,5 +1,9 @@
 package org.apache.maven;
 
+import aladdin.cart;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+
 public class Goods implements java.io.Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -10,6 +14,15 @@ public class Goods implements java.io.Serializable {
     private String detail;
     private String seller;
     private String quantity;
+    private final Button addtocart = new Button("Add to cart");
+
+                    {
+                        addtocart.setOnAction((ActionEvent event) -> {
+                            cart add = cart.getinstance();
+                            add.addGoods(this);
+                        });
+                    }
+
 
     public Goods() {
     }
@@ -67,4 +80,13 @@ public class Goods implements java.io.Serializable {
     public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
+
+    public Button getAddtocart() {
+        return addtocart;
+    }
+
+    public void setAddtocart(Button addtocart) {
+        this.addtocart = addtocart;
+    }
+    
 }

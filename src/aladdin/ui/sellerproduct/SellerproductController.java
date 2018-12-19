@@ -72,5 +72,5 @@ public class SellerproductController implements Initializable {
             }
             number++;
         }
-    
+    }
 }
