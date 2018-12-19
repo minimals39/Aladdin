@@ -24,7 +24,6 @@ import javafx.stage.Stage;
  * @author japan
  */
 public class ShowproductController implements Initializable {
-
     @FXML
     private AnchorPane a3;
     @FXML
@@ -38,6 +37,7 @@ public class ShowproductController implements Initializable {
     @FXML
     private AnchorPane a5;
 
+ 
     /**
      * Initializes the controller class.
      */

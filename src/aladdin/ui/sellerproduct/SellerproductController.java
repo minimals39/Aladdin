@@ -45,7 +45,6 @@ public class SellerproductController implements Initializable {
         PdStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         //add your data to the table here.
         Table.setItems(GoodsList);
-
     }
 
     private void Load() {
@@ -66,6 +65,7 @@ public class SellerproductController implements Initializable {
                 GoodsList.add(new Goods(name, price, quan, "temp", "temp"));
 //               Goods(String name, String price, String detail, String seller, String quantity)
             }
+            Table.getItems().setAll(GoodsList);
 
         }
     }
