@@ -1,7 +1,12 @@
 package org.apache.maven;
 
+<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
+=======
+import aladdin.CustomerData;
+import aladdin.cart;
+>>>>>>> FinalVersion
 import org.hibernate.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -28,6 +33,8 @@ public class Goods implements java.io.Serializable {
                             Order order = new Order();
                             order.setSeller(this.seller);
                             order.setPrice(this.price);
+                            CustomerData customerData = CustomerData.getInstance();
+                            order.setCustomer(customerData.getName());
                             session.save(order);
                             String number = Integer.toString(this.no);
                             String sql = "SELECT * FROM aladdin.goods WHERE ID ="+number;
