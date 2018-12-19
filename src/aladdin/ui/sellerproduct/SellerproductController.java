@@ -56,6 +56,9 @@ public class SellerproductController implements Initializable {
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
+            if (data == null) {
+                break;
+            }
             for (Object object : data) {
                 Map row = (Map) object;
                 String name = (String) row.get("name");
