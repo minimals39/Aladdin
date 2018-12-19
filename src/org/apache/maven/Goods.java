@@ -1,6 +1,7 @@
 package org.apache.maven;
 
-import aladdin.cart;
+import java.util.List;
+import java.util.Map;
 import org.hibernate.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -20,6 +21,7 @@ public class Goods implements java.io.Serializable {
 
                     {
                         addtocart.setOnAction((ActionEvent event) -> {
+                            String number1 = "1";
                             Session session = HibernateUtil.getSessionFactory().openSession();
 
                             session.beginTransaction();
@@ -33,7 +35,8 @@ public class Goods implements java.io.Serializable {
                             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                             List data = query.list();
                             for(Object object : data) {
-                                String number1 = row.get("quantity"); }
+                            Map row = (Map)object;
+                            number1 = (String)row.get("quantity"); }
                             int No1 = Integer.parseInt(number1);
                             No1 -= 1;
                             String sql2 = "UPDATE aladdin.goods SET quantity = :No1"+"Where no = :no";
