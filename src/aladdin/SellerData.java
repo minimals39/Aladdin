@@ -18,11 +18,11 @@ public class SellerData {
     public SellerData() {
     }
 
-    public SellerData(String name, String surname, String id, String password, String payment ,String CustomerList) {
+    public SellerData(String name, String surname, String id, String password, String payment ,String GoodsID) {
         this.name = name;
         this.surname = surname;
         this.payment = payment;
-        this.GoodsID = CustomerList;
+        this.GoodsID = GoodsID;
     }
 
 

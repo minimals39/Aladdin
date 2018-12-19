@@ -6,11 +6,18 @@
 package aladdin.ui.sellerinfo;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
@@ -18,19 +25,48 @@ import javafx.scene.control.Button;
  * @author japan
  */
 public class SellinfoController implements Initializable {
+
     @FXML
     private Button editbutton;
+    @FXML
+    private Label inName;
+    @FXML
+    private Label InSurname;
+    @FXML
+    private Label InInfo;
+    @FXML
+    private Label InPayment;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        System.out.println("Can We get here 1");
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        System.out.println("Can We get here 2");
+        session.beginTransaction();
+        System.out.println("Can We get here 3");
+
+        String sql = "SELECT * FROM aladdin.Seller WHERE ID= 'TestSeller'";
+        System.out.println("4");
+
+        SQLQuery query = session.createSQLQuery(sql);
+        query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+        List data = query.list();
+        for (Object object : data) {
+            Map row = (Map) object;
+            inName.setText(""+row.get("Name"));
+            InSurname.setText(""+row.get("Surname"));
+            InInfo.setText(""+row.get("ID"));
+            InPayment.setText(""+row.get("Payment"));
+        }
+
+    }
 
     @FXML
     private void edit(ActionEvent event) {
     }
-    
+
 }

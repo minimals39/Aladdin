@@ -25,6 +25,7 @@ import org.apache.maven.Customer;
 import org.apache.persistence.HibernateUtil;
 import org.hibernate.Session;
 import org.apache.maven.Goods;
+import aladdin.SellerData;
 
 /**
  * FXML Controller class
@@ -104,11 +105,14 @@ public class AddproductController implements Initializable {
         goods.setName(name);
         goods.setPrice(price);
         goods.setQuantity(quantiy);
-        goods.setSeller("LungTu");
+        goods.setSeller("TestSeller");
 
         session.save(goods);
         session.getTransaction().commit();
         System.out.println("Added");
+        
+        
+        
     }
 
 }

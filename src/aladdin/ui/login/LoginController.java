@@ -115,6 +115,9 @@ public class LoginController implements Initializable {
 
                         
                     }
+                    else{
+                    
+                    }
                 }
 
             } else if (seller.isSelected()) {
