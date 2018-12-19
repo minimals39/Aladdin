@@ -5,6 +5,7 @@
  */
 package aladdin.ui.sellerproduct;
 
+import aladdin.SellerData;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -47,6 +48,7 @@ public class SellerproductController implements Initializable {
         PdStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         //add your data to the table here.
         Table.setItems(GoodsList);
+        SellerData sellerdata = SellerData.getinstance();
         
     }
     
