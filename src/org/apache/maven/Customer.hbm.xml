@@ -78,5 +78,22 @@
             <column name="Quantity" length="20" not-null="true" unique="false" />
         </property>
     </class>
+    
+    <class name="org.apache.maven.Order" table="Order" catalog="aladdin">
+        <id name="no" type="java.lang.Integer">
+            <column name="No" />
+            <generator class="identity" />
+        </id>
+        <property name="price" type="string">
+            <column name="Price" length="20" not-null="true" unique="false" />
+        </property>
+        <property name="seller" type="string">
+            <column name="seller" length="100" not-null="true" unique="false" />
+        </property>
+        <property name="customer" type="string">
+            <column name="customer" length="20" not-null="true" unique="false" />
+        </property>
+        
+    </class>
 </hibernate-mapping>
 
