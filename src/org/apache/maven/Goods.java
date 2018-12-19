@@ -85,8 +85,4 @@ public class Goods implements java.io.Serializable {
         return addtocart;
     }
 
-    public void setAddtocart(Button addtocart) {
-        this.addtocart = addtocart;
-    }
-    
 }
