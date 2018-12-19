@@ -49,15 +49,15 @@ public class UserinfoController implements Initializable {
         
         String name = "";
         String surname = "";
-        String tAddress = "";
-        String tcard = "";
+        String Address = "";
+        String card = "";
         String sec = "";
         
         Name.setText(name);
-        Surname.setText(surname);
-        Address.setText(tAddress);
-        card.setText(tcard);
-        SN.setText(sec);
+        Name.setText(surname);
+        Name.setText(Address);
+        Name.setText(card);
+        Name.setText(sec);
         // TODO
     }    
 
