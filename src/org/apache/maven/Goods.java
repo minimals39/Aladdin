@@ -1,14 +1,10 @@
 package org.apache.maven;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 import aladdin.CustomerData;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of eb2c7b5... Make order succes
->>>>>>> FinalVersion
+
+
 import aladdin.cart;
 import org.hibernate.*;
 import javafx.event.ActionEvent;
@@ -21,6 +17,7 @@ public class Goods implements java.io.Serializable {
 
     private Integer no;
     private String name;
+    String newString = '\''+ name + '\'';
     private String price;
     private String detail;
     private String seller;
@@ -37,8 +34,7 @@ public class Goods implements java.io.Serializable {
                             order.setSeller(this.seller);
                             order.setPrice(this.price);
                             session.save(order);
-                            String number = Integer.toString(this.no);
-                            String sql = "SELECT * FROM aladdin.goods WHERE ID ="+number;
+                            String sql = "SELECT * FROM aladdin.goods WHERE ID ="+newString;
                             SQLQuery query = session.createSQLQuery(sql);
                             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
                             List data = query.list();
