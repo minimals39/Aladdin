@@ -94,12 +94,12 @@ public class LoginController implements Initializable {
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
                         
-                        CustomerData logged = new CustomerData();
+                        /*CustomerData logged = new CustomerData();
                         
                         logged.setGoodsID(""+row.get("GoodsID"));
                         logged.setName(""+row.get("Name"));
                         logged.setPayment(""+row.get("payment"));
-                        logged.setSurname(""+row.get("Surname"));
+                        logged.setSurname(""+row.get("Surname"));*/
                         
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));
