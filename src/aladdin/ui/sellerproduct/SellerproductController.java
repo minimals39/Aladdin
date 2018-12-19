@@ -44,6 +44,7 @@ public class SellerproductController implements Initializable {
         PdPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         PdStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         //add your data to the table here.
+        Load();
         Table.setItems(GoodsList);
     }
 
@@ -51,29 +52,25 @@ public class SellerproductController implements Initializable {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
-        List goods = session.createSQLQuery("FROM aladdin.Goods").list();
-        for(Iterator iterator = goods.iterator(); iterator.hasNext();) {
-            Goods good = (Goods) iterator.next();
-            String name = good.getName();
-            String price = good.getPrice();
-            String quan = good.getQuantity();
-
         int number = 1;
         while (true) {
             String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
+            if (data == null || number > 20){break;}
             for (Object object : data) {
                 Map row = (Map) object;
-                String name = (String) row.get("name");
-                String price = (String) row.get("price");
-                String quan = (String) row.get("quantity");
+                String name = (String) row.get("Name");
+                String price = (String) row.get("Price");
+                String quan = (String) row.get("Quantity");
 
-                GoodsList.add(new Goods(name, price, quan, "temp", "temp"));
+                GoodsList.add(new Goods(name, price, quan, "TempSeller", "Ready"));
 //               Goods(String name, String price, String detail, String seller, String quantity)
-            
+                
 
+            }
+            number++;
         }
-    }
+    
 }
