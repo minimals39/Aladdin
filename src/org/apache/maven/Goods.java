@@ -1,5 +1,6 @@
 package org.apache.maven;
 
+import aladdin.CustomerData;
 import aladdin.cart;
 import org.hibernate.*;
 import javafx.event.ActionEvent;
@@ -26,6 +27,8 @@ public class Goods implements java.io.Serializable {
                             Order order = new Order();
                             order.setSeller(this.seller);
                             order.setPrice(this.price);
+                            CustomerData customerData = CustomerData.getInstance();
+                            order.setCustomer(customerData.getName());
                             session.save(order);
                             session.getTransaction().commit();
                         });

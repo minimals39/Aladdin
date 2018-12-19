@@ -79,7 +79,7 @@
         </property>
     </class>
     
-    <class name="org.apache.maven.Order" table="Order" catalog="aladdin">
+    <class name="org.apache.maven.Order" table="order" catalog="aladdin">
         <id name="no" type="java.lang.Integer">
             <column name="No" />
             <generator class="identity" />
