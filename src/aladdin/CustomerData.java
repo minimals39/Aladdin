@@ -9,23 +9,31 @@ package aladdin;
  *
  * @author WIN10
  */
+/*
+How 2 use 
+CustomerData customerdata = CustomerData.getinstance();
+customerdata,set****(**);
+customerdata.get****();
+
+*/
 public class CustomerData {
     
-    private String name;
-    private String surname;
-    private String payment;
-    private String GoodsID;
-
-    public CustomerData() {
+    private static  String name;
+    private static  String surname;
+    private static  String payment;
+    private static  String GoodsID;
+    private static CustomerData instance;
+    
+    public static CustomerData getInstance() {
+        if (instance == null) {
+             instance = new CustomerData();
+        }
+        return instance;
     }
 
-    public CustomerData(String name, String surname, String id, String password, String payment ,String goodid) {
-        this.name = name;
-        this.surname = surname;
-        this.payment = payment;
-        this.GoodsID = goodid;
-    }
 
+    private CustomerData() {
+    }
     public String getName() {
         return this.name;
     }
