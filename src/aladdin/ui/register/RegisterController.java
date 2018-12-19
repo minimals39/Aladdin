@@ -19,6 +19,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
@@ -52,6 +53,12 @@ public class RegisterController implements Initializable {
     private RadioButton seller;
     @FXML
     private Button confirm;
+    @FXML
+    private TextField PayMent;
+    @FXML
+    private TextArea MoreInfo;
+    @FXML
+    private TextField ccv;
 
     /**
      * Initializes the controller class.
@@ -60,17 +67,32 @@ public class RegisterController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         confirm.setDisable(true);
+        PayMent.setDisable(true);
+        MoreInfo.setDisable(true);
+        ccv.setDisable(true);
     }
 
     @FXML
     private void isBuyer(ActionEvent event) {
         confirm.setDisable(false);
-
+        PayMent.setDisable(false);
+        MoreInfo.setDisable(false);
+        ccv.setDisable(false);
+        PayMent.setPromptText("Your credit/debit No.");
+        MoreInfo.setPromptText("Your Address");
     }
 
     @FXML
     private void isSeller(ActionEvent event) {
         confirm.setDisable(false);
+        PayMent.setDisable(false);
+        MoreInfo.setDisable(false);
+        ccv.setDisable(true);
+        ccv.setText("");
+        PayMent.setPromptText("Your bank account");
+        MoreInfo.setPromptText("Your Information");
+
+
     }
 
     @FXML
