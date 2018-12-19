@@ -26,6 +26,10 @@ import org.apache.persistence.HibernateUtil;
 import org.hibernate.Session;
 import org.apache.maven.Goods;
 import aladdin.SellerData;
+import java.util.List;
+import java.util.Map;
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 
 /**
  * FXML Controller class
@@ -105,7 +109,23 @@ public class AddproductController implements Initializable {
         goods.setName(name);
         goods.setPrice(price);
         goods.setQuantity(quantiy);
-        goods.setSeller("TestSeller");
+        
+        
+        SellerData sellerdata = SellerData.getinstance();
+        
+        
+        System.out.println(sellerdata.getName());
+        String newString = '\''+ sellerdata.getName() + '\'';
+        /*String sql = "SELECT * FROM aladdin.Seller WHERE Name= "+ newString;
+        SQLQuery query = session.createSQLQuery(sql);
+        query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+        List data = query.list();
+        for (Object object : data) {
+            Map row = (Map) object;
+            goods.setSeller(""+row.get("ID"));
+        }*/
+        goods.setSeller(sellerdata.getName());
+        
 
         session.save(goods);
         session.getTransaction().commit();
