@@ -4,8 +4,7 @@
  * and open the template in the editor.
  */
 package aladdin.ui.sellerproduct;
-
-import aladdin.SellerData;
+import java.util.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -16,6 +15,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.apache.maven.Goods;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.*;
 
 
 
@@ -48,21 +51,27 @@ public class SellerproductController implements Initializable {
         PdStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         //add your data to the table here.
         Table.setItems(GoodsList);
-        SellerData sellerdata = SellerData.getinstance();
         
     }
     
     private void Load(){
-        /*
-        loop backend to get goods
-        while(goods from backend){
-        String gname = goods.name
-        String price = goods,price
-        String quan = goods.quan    
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        int number = 1;
+        while(true){
+            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
+            SQLQuery query = session.createSQLQuery(sql);
+            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+            List data = query.list();
+            for(Object object : data) {
+                Map row = (Map)object;
+                String name = (String)row.get("name");
+                String price = (String)row.get("price"); 
+                String quan = (String)row.get("quantity");    
         
         GoodsList.add(new Goods(name,price,quan));
         }
-        */
+        
 
     
     }
