@@ -119,11 +119,12 @@ public class RegisterController implements Initializable {
             Customer Account = new Customer();
 
             Account.setID(user);
-            Account.setName(n);
             Account.setSurname(sur);
+            Account.setName(n);
             Account.setPassword(pw);
             Account.setPayment("None");
-            Account.setAddress("None");     
+            Account.setAddress("None");
+            Account.setGoodsID("None");
             
             session.save(Account);
             session.getTransaction().commit();            
