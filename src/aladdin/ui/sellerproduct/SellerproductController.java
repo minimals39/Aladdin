@@ -33,7 +33,9 @@ public class SellerproductController implements Initializable {
     private TableColumn<Goods, String> PdPrice;
     @FXML
     private TableColumn<Goods, String> PdStatus;
-
+    
+    private ObservableList<Goods> GoodsList = FXCollections.observableArrayList();
+    
     /**
      * Initializes the controller class.
      */
@@ -45,10 +47,21 @@ public class SellerproductController implements Initializable {
         PdStatus.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         //add your data to the table here.
         Table.setItems(GoodsList);
+        
     }
     
-    private ObservableList<Goods> GoodsList = FXCollections.observableArrayList(
-           new Goods("Soup", "50", "just soup", "TestSeller", "200"),
-           new Goods("Shirt", "100", "just shirt", "TestSeller", "10")
-    );
+    private void Load(){
+        /*
+        loop backend to get goods
+        while(goods from backend){
+        String gname = goods.name
+        String price = goods,price
+        String quan = goods.quan    
+        
+        GoodsList.add(new Goods(name,price,quan));
+        }
+        */
+
+    
+    }
 }

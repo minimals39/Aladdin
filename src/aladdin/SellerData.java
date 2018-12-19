@@ -10,23 +10,25 @@ package aladdin;
  * @author WIN10
  */
 public class SellerData {
-    private String name;
-    private String surname;
-    private String payment;
-    private String GoodsID;
-
-    public SellerData() {
+    private static String name;
+    private static String surname;
+    private static String payment;
+    private static String GoodsID;
+    private static SellerData instance;
+    
+    
+    public SellerData getinstance(){
+         if (instance == null) {
+             instance = new SellerData();
+        }
+        return instance;
     }
 
-    public SellerData(String name, String surname, String id, String password, String payment ,String GoodsID) {
-        this.name = name;
-        this.surname = surname;
-        this.payment = payment;
-        this.GoodsID = GoodsID;
+    private SellerData() {
     }
-
-
+    
     public String getName() {
+        
         return this.name;
     }
 
