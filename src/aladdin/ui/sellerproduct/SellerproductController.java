@@ -64,8 +64,11 @@ public class SellerproductController implements Initializable {
                 String name = (String) row.get("Name");
                 String price = (String) row.get("Price");
                 String quan = (String) row.get("Quantity");
-
-                GoodsList.add(new Goods(name, price, quan, "TempSeller", "Ready"));
+                String owner = (String) row.get("Seller");
+                String DT = (String) row.get("Detail");
+                
+                //if()
+                GoodsList.add(new Goods(name, price, quan,owner, DT));
 //               Goods(String name, String price, String detail, String seller, String quantity)
                 
 
