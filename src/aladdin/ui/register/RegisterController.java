@@ -92,11 +92,11 @@ public class RegisterController implements Initializable {
         PayMent.setPromptText("Your bank account");
         MoreInfo.setPromptText("Your Information");
 
-
     }
 
     @FXML
     private void confirm(ActionEvent event) throws IOException {
+<<<<<<< Updated upstream
         String user = username.getText(); 
         String pw = pass.getText(); 
         String pwch = passcheck.getText(); 
@@ -153,22 +153,78 @@ public class RegisterController implements Initializable {
             openmain("buyer");
             closeStage();
         
+=======
+        String user = username.getText();
+        String pw = pass.getText();
+        String pwch = passcheck.getText();
+        String n = name.getText();
+        String sur = surname.getText();
+
+        if (user.isEmpty() || pw.isEmpty() || pwch.isEmpty() || n.isEmpty() || sur.isEmpty()) {
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Please input all field");
+            alert.showAndWait();
+
+        } else {
+            if (seller.isSelected()) {
+                System.out.println("Maven + Hibernate + MySQL");
+                Session session = HibernateUtil.getSessionFactory().openSession();
+
+                session.beginTransaction();
+                Seller Account = new Seller();
+
+                Account.setID(user);
+                Account.setName(n);
+                Account.setPassword(pw);
+                Account.setPayment("None");
+                Account.setSurname(sur);
+                Account.setGoodsID("0");
+
+                session.save(Account);
+                session.getTransaction().commit();
+
+                openmain("seller");
+                closeStage();
+
+            } else if (buyer.isSelected()) {
+                System.out.println("Maven + Hibernate + MySQL");
+                Session session = HibernateUtil.getSessionFactory().openSession();
+
+                session.beginTransaction();
+                Customer Account = new Customer();
+
+                Account.setID(user);
+                Account.setSurname(sur);
+                Account.setName(n);
+                Account.setPassword(pw);
+                Account.setPayment("None");
+                Account.setAddress("None");
+                Account.setGoodsID("None");
+
+                session.save(Account);
+                session.getTransaction().commit();
+                openmain("buyer");
+                closeStage();
+
+            }
+>>>>>>> Stashed changes
         }
     }
-    private void openmain(String type)throws IOException{
+
+    private void openmain(String type) throws IOException {
         String resource = "";
-        if(type == "buyer"){
-           resource = "/aladdin/ui/main/main.fxml";
-        }
-           else{
+        if (type == "buyer") {
+            resource = "/aladdin/ui/main/main.fxml";
+        } else {
             resource = "/aladdin/ui/sellermain/sellermain.fxml";
         }
-            Stage primaryStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource(resource));
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("Hello World!");
-            primaryStage.setScene(scene);
-            primaryStage.show();
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(resource));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     private void closeStage() {
