@@ -16,7 +16,7 @@
       <Text layoutX="169.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Surname" />
       <Text layoutX="169.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About you:" />
       <ImageView fitHeight="119.0" fitWidth="143.0" layoutX="16.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
-      <Button layoutX="62.0" layoutY="175.0" mnemonicParsing="false" text="Uploadpic" />
+      <Button fx:id="order" layoutX="163.0" layoutY="278.0" mnemonicParsing="false" onAction="#order" text="Uploadpic" />
       <Button fx:id="editbutton" layoutX="523.0" layoutY="350.0" mnemonicParsing="false" onAction="#edit" text="Edit" />
       <Text layoutX="169.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bank Account" />
       <Label fx:id="inName" layoutX="261.0" layoutY="30.0" prefHeight="18.0" prefWidth="204.0" text="name" textFill="#717171" />

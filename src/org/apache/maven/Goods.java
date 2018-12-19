@@ -30,6 +30,23 @@ public class Goods implements java.io.Serializable {
                             CustomerData customerData = CustomerData.getInstance();
                             order.setCustomer(customerData.getName());
                             session.save(order);
+                            String number = Integer.toString(this.no);
+                            String sql = "SELECT * FROM aladdin.goods WHERE ID ="+number;
+                            SQLQuery query = session.createSQLQuery(sql);
+                            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+                            List data = query.list();
+                            for(Object object : data) {
+                                String number1 = row.get("quantity"); }
+                            int No1 = Integer.parseInt(number1);
+                            No1 -= 1;
+                            String sql2 = "UPDATE aladdin.goods SET quantity = :No1"+"Where no = :no";
+                            SQLQuery query2 = session.createSQLQuery(sql2);
+                            query2.setParameter("No1",No1);
+                            query2.setParameter("no",this.no);
+                            int result = query2.executeUpdate();
+                                
+                                
+            
                             session.getTransaction().commit();
                         });
                     }

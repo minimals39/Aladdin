@@ -37,6 +37,8 @@ public class SellinfoController implements Initializable {
     private Label InInfo;
     @FXML
     private Label InPayment;
+    @FXML
+    private Button order;
 
     /**
      * Initializes the controller class.
@@ -75,6 +77,10 @@ public class SellinfoController implements Initializable {
 
     @FXML
     private void edit(ActionEvent event) {
+    }
+
+    @FXML
+    private void order(ActionEvent event) {
     }
 
 }
