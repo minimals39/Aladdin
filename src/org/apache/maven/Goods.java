@@ -33,21 +33,10 @@ public class Goods implements java.io.Serializable {
                             Order order = new Order();
                             order.setSeller(this.seller);
                             order.setPrice(this.price);
+                            CustomerData customerData = CustomerData.getInstance();
+                            order.setCustomer(customerData.getName());
                             session.save(order);
-                            String sql = "SELECT * FROM aladdin.goods WHERE ID ="+newString;
-                            SQLQuery query = session.createSQLQuery(sql);
-                            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
-                            List data = query.list();
-                            for(Object object : data) {
-                            Map row = (Map)object;
-                            number1 = (String)row.get("quantity"); }
-                            int No1 = Integer.parseInt(number1);
-                            No1 -= 1;
-                            String sql2 = "UPDATE aladdin.goods SET quantity = :No1"+"Where no = :no";
-                            SQLQuery query2 = session.createSQLQuery(sql2);
-                            query2.setParameter("No1",No1);
-                            query2.setParameter("no",this.no);
-                            int result = query2.executeUpdate();
+                            session.getTransaction().commit();
                                 
                                 
             
