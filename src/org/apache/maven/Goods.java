@@ -1,12 +1,9 @@
 package org.apache.maven;
 
-<<<<<<< HEAD
 import java.util.List;
 import java.util.Map;
 import aladdin.CustomerData;
-=======
 import aladdin.cart;
->>>>>>> parent of eb2c7b5... Make order succes
 import org.hibernate.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
