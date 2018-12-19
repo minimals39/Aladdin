@@ -5,7 +5,6 @@
  */
 package aladdin.ui.login;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -139,10 +138,13 @@ public class LoginController implements Initializable {
 
                     if (pass.equals(row.get("Password"))) {
                         System.out.println(", Correct " + row.get("Password"));
+                        SellerData sellerdata = SellerData.getinstance();
+                        sellerdata.setName(user);
+                        /*sellerdata.setSurname(sql);*/
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellermain/sellermain.fxml"));
                         Scene scene = new Scene(root);
-                        primaryStage.setTitle("Hello World!");
+                        primaryStage.setTitle("Aladdin");
                         primaryStage.setScene(scene);
                         primaryStage.show();
                         closeStage();

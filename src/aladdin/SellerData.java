@@ -17,7 +17,7 @@ public class SellerData {
     private static SellerData instance;
     
     
-    public SellerData getinstance(){
+    public static SellerData getinstance(){
          if (instance == null) {
              instance = new SellerData();
         }
