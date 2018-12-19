@@ -54,7 +54,8 @@ public class SellinfoController implements Initializable {
         
         SellerData sellerdata = SellerData.getinstance();
         System.out.println(sellerdata.getName());
-        String sql = "SELECT * FROM aladdin.Seller WHERE ID= 'TestSeller'";
+        String newString = '\''+ sellerdata.getName() + '\'';
+        String sql = "SELECT * FROM aladdin.Seller WHERE Name= "+ newString;
         System.out.println("4");
 
         SQLQuery query = session.createSQLQuery(sql);

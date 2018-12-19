@@ -122,9 +122,9 @@ public class RegisterController implements Initializable {
             Account.setID(user);
             Account.setName(n);
             Account.setPassword(pw);
-            Account.setPayment("None");
+            Account.setPayment(PayMent.getText());
             Account.setSurname(sur);
-            Account.setGoodsID("0");
+            Account.setGoodsID(MoreInfo.getText());
             
             session.save(Account);
             session.getTransaction().commit();
@@ -144,8 +144,8 @@ public class RegisterController implements Initializable {
             Account.setSurname(sur);
             Account.setName(n);
             Account.setPassword(pw);
-            Account.setPayment("None");
-            Account.setAddress("None");
+            Account.setPayment(PayMent.getText());
+            Account.setAddress(MoreInfo.getText());
             Account.setGoodsID("None");
             
             session.save(Account);
