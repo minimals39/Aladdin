@@ -9,6 +9,7 @@ import aladdin.CustomerData;
 import aladdin.cart;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +40,7 @@ public class CheckoutpageController implements Initializable {
     @FXML
     private TableView<Goods> Table;
 
-    private ObservableList<Goods> GoodsList;
+    private ObservableList<Goods> GoodsList = FXCollections.observableArrayList();
 
     /**
      * Initializes the controller class.
