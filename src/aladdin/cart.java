@@ -19,14 +19,12 @@ public class cart {
     private cart() {
     
     }    
-    public static cart getinstance(){
+    public static cart getInstance(){
+        System.out.println("Call cart");
          if (instance == null) {
+             System.out.println("Null cart");
              instance = new cart();
         }
-        return instance;
-    }
-
-    public static cart getInstance() {
         return instance;
     }
 

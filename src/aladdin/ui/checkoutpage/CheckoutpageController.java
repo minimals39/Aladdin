@@ -42,6 +42,8 @@ public class CheckoutpageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+        
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
         iprice.setCellValueFactory(new PropertyValueFactory<>("price"));
         cart incart = cart.getInstance();
