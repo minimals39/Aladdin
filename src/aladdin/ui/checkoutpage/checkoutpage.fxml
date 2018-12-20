@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aladdin.ui.checkoutpage.CheckoutpageController">
    <top>
       <AnchorPane prefHeight="59.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -17,18 +17,20 @@
       </AnchorPane>
    </top>
    <center>
-      <TableView prefHeight="170.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="Table" prefHeight="170.0" prefWidth="600.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="Price" />
+          <TableColumn fx:id="iname" prefWidth="494.39996337890625" text="Name" />
+          <TableColumn fx:id="iprice" prefWidth="104.800048828125" text="Price" />
         </columns>
       </TableView>
    </center>
    <bottom>
       <AnchorPane prefHeight="46.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="516.0" layoutY="11.0" mnemonicParsing="false" text="Checkout" />
+            <Button layoutX="516.0" layoutY="11.0" mnemonicParsing="false" onAction="#checkOut" text="Checkout" />
             <Text layoutX="14.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " />
+            <Button layoutX="451.0" layoutY="11.0" mnemonicParsing="false" onAction="#cancel" text="Cancel" />
+            <Label fx:id="total" layoutX="55.0" layoutY="15.0" text="Label" />
          </children>
       </AnchorPane>
    </bottom>

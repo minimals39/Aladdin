@@ -46,5 +46,7 @@ public class cart {
     this.GoodsList.add(good);
     }
 
-    
+    public void clear(){
+    this.GoodsList.clear();
+    }
 }

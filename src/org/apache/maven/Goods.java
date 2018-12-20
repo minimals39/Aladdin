@@ -1,15 +1,10 @@
 package org.apache.maven;
 
-import java.util.List;
-import java.util.Map;
-import aladdin.CustomerData;
 
 
 import aladdin.cart;
-import org.hibernate.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
-import org.apache.persistence.HibernateUtil;
 
 public class Goods implements java.io.Serializable {
 
@@ -26,6 +21,7 @@ public class Goods implements java.io.Serializable {
 
                     {
                         addtocart.setOnAction((ActionEvent event) -> {
+                            /*
                             String number1 = "1";
                             Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -41,6 +37,9 @@ public class Goods implements java.io.Serializable {
                                 
             
                             session.getTransaction().commit();
+                                    */
+                            cart incart = cart.getInstance();
+                            incart.addGoods(this);
                         });
                     }
 
