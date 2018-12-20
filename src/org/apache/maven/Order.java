@@ -5,6 +5,10 @@
  */
 package org.apache.maven;
 
+import aladdin.cart;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+
 /**
  *
  * @author WIN10
@@ -16,9 +20,21 @@ public class Order {
     private String Customer;
     private String Address;
     private String Name;
-    
+    private boolean status;
+    private final Button sendgoods = new Button("sendgoods");
+
+                    {
+                        sendgoods.setOnAction((ActionEvent event) -> {
+                            
+                        });
+                    }
 
     public Order() {
+        if(status){        sendgoods.setDisable(true);
+             }
+        else{
+        sendgoods.setDisable(false);
+        }
     }
 
     public Order(String Price, String Seller, String Customer,String Address,String Name) {

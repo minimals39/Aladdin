@@ -40,6 +40,8 @@ public class SellerOrderController implements Initializable {
     private ObservableList<Order> GoodsList = FXCollections.observableArrayList();
     @FXML
     private TableView<Order> Table;
+    @FXML
+    private TableColumn<Order, String> action;
 
     /**
      * Initializes the controller class.
@@ -47,10 +49,11 @@ public class SellerOrderController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        // TODO
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
         buyer.setCellValueFactory(new PropertyValueFactory<>("Customer"));
         buyeraddr.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        action.setCellValueFactory(new PropertyValueFactory<>("sendgoods"));
+
         Load();
         Table.setItems(GoodsList);
     }

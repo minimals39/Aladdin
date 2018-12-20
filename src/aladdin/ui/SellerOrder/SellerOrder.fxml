@@ -14,7 +14,8 @@
         <columns>
           <TableColumn fx:id="iname" prefWidth="126.4000244140625" text="Item Name" />
           <TableColumn fx:id="buyer" prefWidth="121.5999755859375" text="Buyer" />
-            <TableColumn fx:id="buyeraddr" prefWidth="352.0" text="Address" />
+            <TableColumn fx:id="buyeraddr" prefWidth="240.79998779296875" text="Address" />
+            <TableColumn fx:id="action" prefWidth="110.40008544921875" text="Status" />
         </columns>
       </TableView>
    </children>
