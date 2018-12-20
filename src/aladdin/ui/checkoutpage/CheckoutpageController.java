@@ -45,7 +45,9 @@ public class CheckoutpageController implements Initializable {
         iprice.setCellValueFactory(new PropertyValueFactory<>("price"));
         cart incart = cart.getInstance();
         GoodsList = incart.getGoodsList();
+        if(!GoodsList.isEmpty()){
         Table.setItems(GoodsList);
+        }
     }    
 
     @FXML
