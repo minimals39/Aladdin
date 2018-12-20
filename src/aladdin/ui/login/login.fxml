@@ -27,7 +27,7 @@
          </toggleGroup>
       </RadioButton>
       <RadioButton fx:id="seller" layoutX="170.0" layoutY="232.0" mnemonicParsing="false" onAction="#tick" text="Seller" toggleGroup="$type" />
-      <ImageView fx:id="logo" fitHeight="109.0" fitWidth="100.0" layoutX="103.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="logo" fitHeight="109.0" fitWidth="176.0" layoutX="65.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../../../../Pictures/seyana.PNG" />
          </image>
