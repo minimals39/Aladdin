@@ -137,7 +137,7 @@ public class CheckoutpageController implements Initializable {
         Stage primaryStage = new Stage(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/receipt/receipt.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Receipt");
         primaryStage.setScene(scene);
         primaryStage.show();
         closeStage();

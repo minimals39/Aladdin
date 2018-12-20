@@ -89,7 +89,7 @@ public class SellinfoController implements Initializable {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/sellerorder/sellerorder.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Your Order!");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
