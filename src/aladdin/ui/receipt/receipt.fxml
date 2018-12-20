@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.receipt.ReceiptController">
+    <stylesheets>
+        <URL value="@receipt.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="72.0" layoutY="36.0" text="Thank you for buying" />
+      <Label layoutX="99.0" layoutY="67.0" text="Your orders are" />
+      <TableView fx:id="Table" layoutX="186.0" layoutY="67.0" prefHeight="114.0" prefWidth="358.0">
+        <columns>
+          <TableColumn fx:id="iname" prefWidth="179.20001220703125" text="Name" />
+          <TableColumn fx:id="price" prefWidth="178.4000244140625" text="Price" />
+        </columns>
+      </TableView>
+      <Text layoutX="72.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: " />
+      <Label fx:id="total" layoutX="115.0" layoutY="209.0" text="total" />
+      <Text layoutX="71.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
