@@ -20,7 +20,6 @@ public class Order {
     private String Customer;
     private String Address;
     private String Name;
-    private boolean status;
     private final Button sendgoods = new Button("sendgoods");
 
                     {
@@ -44,6 +43,10 @@ public class Order {
         this.Address = Address;
         this.Name = Name;
 
+    }
+
+    public Button getSendgoods() {
+        return sendgoods;
     }
 
     public Integer getNo() {
