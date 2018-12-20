@@ -16,6 +16,15 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apache.maven.Goods;
 import org.apache.maven.Order;
+import org.hibernate.*;
+import org.apache.persistence.HibernateUtil;
+import aladdin.SellerData;
+import java.util.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+
 
 /**
  * FXML Controller class
@@ -46,16 +55,14 @@ public class SellerOrderController implements Initializable {
         Load();
         Table.setItems(GoodsList);
     }    
-           private void Load() {
-            
-            /*
-        }
+    
+    private void Load() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
         int number = 1;
         while (true) {
-            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
+            String sql = "SELECT * FROM aladdin.Order WHERE no= " + number;
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
@@ -63,18 +70,16 @@ public class SellerOrderController implements Initializable {
             for (Object object : data) {
                 
                 Map row = (Map) object;
-                String name = (String) row.get("Name");
-                String price = (String) row.get("Price");
-                String quan = (String) row.get("Quantity");
-                String owner = (String) row.get("Seller");
-                String DT = (String) row.get("Detail");
+                String Name = (String) row.get("Name");
+                String Price = (String) row.get("Price");
+                String Seller = (String) row.get("Seller");
+                String Customer = (String) row.get("Customer");
+                String Address = (String) row.get("Address");
                 
-               
-                GoodsList.add(new Goods(name, price, DT, owner, quan));
-//               Goods(String name, String price, String detail, String seller, String quantity)
-                 
-
             }
-            number++;*/
+            number++;
+            
         }
+    }
 }
+           
