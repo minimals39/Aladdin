@@ -57,15 +57,21 @@ public class CheckoutpageController implements Initializable {
             Table.setItems(GoodsList);
         }
         
+        int sum = 0;
+        
         if(!incart.getGoodsList().isEmpty()){
             int max = GoodsList.size(),i;
             System.out.println(max);
             for(i = 0; i<max ;i++){
                 System.out.println(GoodsList.get(i).getPrice());
+                sum += Integer.parseInt( GoodsList.get(i).getPrice());
             }
         
         
         }
+        
+        total.setText(""+sum);
+        System.out.println("sum = " +sum);
         
     }
 
@@ -81,7 +87,7 @@ public class CheckoutpageController implements Initializable {
             
             
             
-            int sum = 0;
+            //int sum = 0;
             
             for(i = 0; i<max ;i++){
                 Session session = HibernateUtil.getSessionFactory().openSession();
@@ -94,14 +100,14 @@ public class CheckoutpageController implements Initializable {
                 makeorder.setSeller(GoodsList.get(i).getSeller());
                 makeorder.setName(GoodsList.get(i).getName());
                 
-                sum+= Integer.parseInt( GoodsList.get(i).getPrice());
+                //sum += Integer.parseInt( GoodsList.get(i).getPrice());
                 //System.out.println(GoodsList.get(i).getPrice());
                 session.save(makeorder);
                 session.getTransaction().commit();
             }
             
-            total.setText(""+sum);
-            System.out.println(sum);
+            //total.setText(""+sum);
+            //System.out.println("sum = " +sum);
         
         
         }
