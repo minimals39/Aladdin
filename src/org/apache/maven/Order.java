@@ -25,6 +25,7 @@ public class Order {
                     {
                         sendgoods.setOnAction((ActionEvent event) -> {
                             sendgoods.setDisable(true);
+                            sendgoods.setText("Sent");
                         });
                     }
 
