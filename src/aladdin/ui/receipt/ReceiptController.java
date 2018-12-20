@@ -10,6 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -30,6 +31,7 @@ public class ReceiptController implements Initializable {
     private TableColumn<Goods, String> iname;
     @FXML
     private TableColumn<Goods, String> price;
+    
     private ObservableList<Goods> GoodsList = FXCollections.observableArrayList();
     @FXML
     private Label total;
@@ -67,5 +69,13 @@ public class ReceiptController implements Initializable {
         System.out.println("sum = " +sum);
         
     }    
+
+    @FXML
+    private void close(ActionEvent event) {
+                GoodsList.clear();
+                cart incart = cart.getInstance();
+
+                incart.clear();
+    }
     
 }

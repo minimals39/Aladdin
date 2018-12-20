@@ -23,6 +23,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.apache.maven.Goods;
 import org.apache.maven.Order;
 import org.apache.persistence.HibernateUtil;
@@ -80,7 +81,7 @@ public class CheckoutpageController implements Initializable {
     }
 
     @FXML
-    private void checkOut(ActionEvent event) {
+    private void checkOut(ActionEvent event) throws IOException {
         /*
         iterate ingoodlist to db
          */
@@ -118,8 +119,8 @@ public class CheckoutpageController implements Initializable {
             
         ////
         receipt();
-        GoodsList.clear();
-        incart.clear();
+       // GoodsList.clear();
+       // incart.clear();
        closeStage();
     }
    private void closeStage() {
@@ -133,7 +134,7 @@ public class CheckoutpageController implements Initializable {
         incart.clear();
     }
     private void receipt() throws IOException{
-        Stage primaryStage = new Stage();
+        Stage primaryStage = new Stage(StageStyle.UNDECORATED);
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/receipt/receipt.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setTitle("Hello World!");
