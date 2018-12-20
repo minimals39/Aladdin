@@ -30,11 +30,11 @@ public class Order {
                     }
 
     public Order() {
-        if(status){        sendgoods.setDisable(true);
+        /*if(status){        sendgoods.setDisable(true);
              }
         else{
         sendgoods.setDisable(false);
-        }
+        }*/
     }
 
     public Order(String Price, String Seller, String Customer,String Address,String Name) {
