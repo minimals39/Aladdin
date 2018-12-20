@@ -97,6 +97,7 @@ public class LoginController implements Initializable {
                         
                         CustomerData customerData = CustomerData.getInstance();
                         customerData.setName(""+row.get("Name"));
+                        customerData.setAddress(""+row.get("Address"));
                         
                         Stage primaryStage = new Stage();
                         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/main/main.fxml"));

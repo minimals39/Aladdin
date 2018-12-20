@@ -5,6 +5,7 @@
  */
 package aladdin.ui.checkoutpage;
 
+import aladdin.CustomerData;
 import aladdin.cart;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -17,7 +18,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.maven.Customer;
 import org.apache.maven.Goods;
+import org.apache.maven.Order;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
@@ -25,6 +30,7 @@ import org.apache.maven.Goods;
  * @author japan
  */
 public class CheckoutpageController implements Initializable {
+
     @FXML
     private Label total;
     @FXML
@@ -42,26 +48,61 @@ public class CheckoutpageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-        
+
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
         iprice.setCellValueFactory(new PropertyValueFactory<>("price"));
         cart incart = cart.getInstance();
-        if(!incart.getGoodsList().isEmpty()){ 
-        GoodsList = incart.getGoodsList();
-        Table.setItems(GoodsList);
+        if (!incart.getGoodsList().isEmpty()) {
+            GoodsList = incart.getGoodsList();
+            Table.setItems(GoodsList);
         }
-    }    
+        
+        if(!incart.getGoodsList().isEmpty()){
+            int max = GoodsList.size(),i;
+            System.out.println(max);
+            for(i = 0; i<max ;i++){
+                System.out.println(GoodsList.get(i).getPrice());
+            }
+        
+        
+        }
+        
+    }
 
     @FXML
     private void checkOut(ActionEvent event) {
         /*
         iterate ingoodlist to db
-        
-        */
-        GoodsList.clear();
+         */
         cart incart = cart.getInstance();
+        if(!incart.getGoodsList().isEmpty()){
+            int max = GoodsList.size(),i;
+            System.out.println(max);
+            
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            session.beginTransaction();
+            Order makeorder = new Order();
+            
+            
+            
+            for(i = 0; i<max ;i++){
+                CustomerData customerData = CustomerData.getInstance();
+                makeorder.setAddress(customerData.getAddress());
+                makeorder.setCustomer(customerData.getName());
+                makeorder.setPrice(GoodsList.get(i).getPrice());
+                makeorder.setSeller(GoodsList.get(i).getSeller());
+                //System.out.println(GoodsList.get(i).getPrice());
+                session.save(makeorder);
+                session.getTransaction().commit();
+            }
+        
+        
+        }
+            
+        ////
+        GoodsList.clear();
         incart.clear();
+       
     }
 
     @FXML
@@ -70,5 +111,5 @@ public class CheckoutpageController implements Initializable {
         cart incart = cart.getInstance();
         incart.clear();
     }
-    
+
 }

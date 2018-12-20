@@ -93,6 +93,9 @@
         <property name="customer" type="string">
             <column name="customer" length="20" not-null="true" unique="false" />
         </property>
+        <property name="Address" type="string">
+            <column name="Address" length="20" not-null="true" unique="false" />
+        </property>
         
     </class>
 </hibernate-mapping>
