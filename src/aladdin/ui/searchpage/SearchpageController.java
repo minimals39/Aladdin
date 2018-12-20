@@ -32,6 +32,7 @@ import org.hibernate.*;
 public class SearchpageController implements Initializable {
     @FXML
     private TextField keyW;
+    
     @FXML
     private TableColumn<Goods, String> name;
     @FXML
@@ -54,7 +55,6 @@ public class SearchpageController implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         info.setCellValueFactory(new PropertyValueFactory<>("detail"));
-        
         Table.setItems(GoodsList);
     }    
     private void Load() {
@@ -66,20 +66,18 @@ public class SearchpageController implements Initializable {
         SellerData sellerdata = SellerData.getinstance();
         System.out.println(sellerdata.getName());
         String Owner = sellerdata.getName();
+        String newString = "\'%"+ keyW.getText() + "%\'";
 
-        while (true) {
+
             if (keyW.getText().isEmpty()) {
                 sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
             }
             else {
-                sql = "SELECT * FROM aladdin.Goods WHERE no= " + number+"LIKE '%"+keyW.getText()+"%'";
+                sql = "SELECT * FROM aladdin.Goods WHERE name LIKE "+newString;
             }          
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
-            if (number > 40) {
-                break;
-            }
             for (Object object : data) {
                 Map row = (Map) object;
                 String name = (String) row.get("Name");
@@ -88,22 +86,20 @@ public class SearchpageController implements Initializable {
                 String owner = (String) row.get("Seller");
                 String DT = (String) row.get("Detail");
 
-                if (Owner.equals(owner)) {
-                    GoodsList.add(new Goods(name, price, quan, owner, DT));
-                }
-                else
-                {
-                    System.out.println(""+Owner );
-                    System.out.println(" "+owner );
-                }
+                
+                GoodsList.add(new Goods(name, price, quan, owner, DT));
+                
+                
 //               Goods(String name, String price, String detail, String seller, String quantity)
 
             }
             number++;
-        }
+        
     }
     @FXML
     private void search(ActionEvent event) {
+        Load();
+        Table.setItems(GoodsList);
     }
     
 }
