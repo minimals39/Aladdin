@@ -5,7 +5,10 @@
  */
 package aladdin.ui.searchpage;
 
+import aladdin.SellerData;
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +21,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apache.maven.Goods;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.*;
 
 /**
  * FXML Controller class
@@ -52,7 +57,45 @@ public class SearchpageController implements Initializable {
         
         Table.setItems(GoodsList);
     }    
+    private void Load() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
 
+        int number = 1;
+        SellerData sellerdata = SellerData.getinstance();
+        System.out.println(sellerdata.getName());
+        String Owner = sellerdata.getName();
+
+        while (true) {
+            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number+"LIKE '%"+keyW.getText()+"%'";
+            SQLQuery query = session.createSQLQuery(sql);
+            query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
+            List data = query.list();
+            if (number > 40) {
+                break;
+            }
+            for (Object object : data) {
+                Map row = (Map) object;
+                String name = (String) row.get("Name");
+                String price = (String) row.get("Price");
+                String quan = (String) row.get("Quantity");
+                String owner = (String) row.get("Seller");
+                String DT = (String) row.get("Detail");
+
+                if (Owner.equals(owner)) {
+                    GoodsList.add(new Goods(name, price, quan, owner, DT));
+                }
+                else
+                {
+                    System.out.println(""+Owner );
+                    System.out.println(" "+owner );
+                }
+//               Goods(String name, String price, String detail, String seller, String quantity)
+
+            }
+            number++;
+        }
+    }
     @FXML
     private void search(ActionEvent event) {
     }
