@@ -90,6 +90,9 @@
         <property name="seller" type="string">
             <column name="seller" length="100" not-null="true" unique="false" />
         </property>
+        <property name="Name" type="string">
+            <column name="Name" length="20" not-null="true" unique="false" />
+        </property>
         <property name="customer" type="string">
             <column name="customer" length="20" not-null="true" unique="false" />
         </property>

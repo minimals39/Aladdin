@@ -78,18 +78,20 @@ public class CheckoutpageController implements Initializable {
             int max = GoodsList.size(),i;
             System.out.println(max);
             
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            session.beginTransaction();
-            Order makeorder = new Order();
+            
             
             
             
             for(i = 0; i<max ;i++){
+                Session session = HibernateUtil.getSessionFactory().openSession();
+                session.beginTransaction();
+                Order makeorder = new Order();
                 CustomerData customerData = CustomerData.getInstance();
                 makeorder.setAddress(customerData.getAddress());
                 makeorder.setCustomer(customerData.getName());
                 makeorder.setPrice(GoodsList.get(i).getPrice());
                 makeorder.setSeller(GoodsList.get(i).getSeller());
+                makeorder.setName(GoodsList.get(i).getName());
                 //System.out.println(GoodsList.get(i).getPrice());
                 session.save(makeorder);
                 session.getTransaction().commit();

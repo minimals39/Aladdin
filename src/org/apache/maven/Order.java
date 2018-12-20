@@ -15,6 +15,8 @@ public class Order {
     private String Seller;
     private String Customer;
     private String Address;
+    private String Name;
+    
 
     public Order() {
     }
@@ -41,6 +43,14 @@ public class Order {
 
     public void setPrice(String Price) {
         this.Price = Price;
+    }
+    
+    public String getName() {
+        return this.Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
     }
     
     public String getAddress() {
