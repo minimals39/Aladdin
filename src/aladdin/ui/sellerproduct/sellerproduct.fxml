@@ -18,9 +18,9 @@
       </AnchorPane>
       <TableView fx:id="Table" layoutY="58.0" prefHeight="342.0" prefWidth="600.0">
         <columns>
-          <TableColumn fx:id="PdName" prefWidth="358.4000121951103" text="Name" />
-          <TableColumn fx:id="PdPrice" prefWidth="112.79998779296875" text="Price" />
-            <TableColumn fx:id="PdStatus" prefWidth="127.99993896484375" text="Status" />
+          <TableColumn fx:id="PdName" prefWidth="168.00006407499313" text="Name" />
+          <TableColumn fx:id="PdPrice" prefWidth="106.40000915527344" text="Price" />
+            <TableColumn fx:id="PdStatus" prefWidth="325.60003662109375" text="Detail" />
         </columns>
       </TableView>
    </children>

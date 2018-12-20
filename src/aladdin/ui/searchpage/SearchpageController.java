@@ -91,7 +91,7 @@ public class SearchpageController implements Initializable {
                 String DT = (String) row.get("Detail");
 
                 
-                GoodsList.add(new Goods(name, price, quan, owner, DT));
+                GoodsList.add(new Goods(name, price, DT, owner, DT));
                 
                 
 //               Goods(String name, String price, String detail, String seller, String quantity)

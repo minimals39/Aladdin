@@ -65,7 +65,7 @@ public class AddproductController implements Initializable {
     @FXML
     private RadioButton Other;
     @FXML
-    private TextField amount;
+   // private TextField amount;
 
     /**
      * Initializes the controller class.
@@ -98,7 +98,7 @@ public class AddproductController implements Initializable {
         String info = PdInfo.getText();
         String name = PdName.getText();
         String price = Price.getText();
-        String quantiy = amount.getText();
+        String quantiy = "Null";
         System.out.println("Maven + Hibernate + MySQL");
         Session session = HibernateUtil.getSessionFactory().openSession();
 
