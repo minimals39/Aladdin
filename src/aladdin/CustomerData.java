@@ -22,6 +22,7 @@ public class CustomerData {
     private static  String surname;
     private static  String payment;
     private static  String GoodsID;
+    private static  String Address;
     private static CustomerData instance;
     
     public static CustomerData getInstance() {
@@ -30,10 +31,18 @@ public class CustomerData {
         }
         return instance;
     }
+    public String getAddress() {
+        return this.Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
+    }
 
 
     private CustomerData() {
     }
+    
     public String getName() {
         return this.name;
     }

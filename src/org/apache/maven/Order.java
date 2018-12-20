@@ -14,6 +14,7 @@ public class Order {
     private String Price;
     private String Seller;
     private String Customer;
+    private String Address;
 
     public Order() {
     }
@@ -33,13 +34,21 @@ public class Order {
     public void setno(Integer no) {
         this.no = no;
     }
-
+    
     public String getPrice() {
         return this.Price;
     }
 
     public void setPrice(String Price) {
         this.Price = Price;
+    }
+    
+    public String getAddress() {
+        return this.Address;
+    }
+
+    public void setAddress(String Address) {
+        this.Address = Address;
     }
 
     public String getSeller() {
