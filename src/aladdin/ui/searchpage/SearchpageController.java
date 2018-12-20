@@ -45,6 +45,8 @@ public class SearchpageController implements Initializable {
     private ObservableList<Goods> GoodsList = FXCollections.observableArrayList();
     @FXML
     private TableView<Goods> Table;
+    @FXML
+    private TableColumn<Goods, String> action;
 
     /**
      * Initializes the controller class.
@@ -55,6 +57,8 @@ public class SearchpageController implements Initializable {
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
         info.setCellValueFactory(new PropertyValueFactory<>("detail"));
+        action.setCellValueFactory(new PropertyValueFactory<>("addtocart"));
+
         Table.setItems(GoodsList);
     }    
     private void Load() {

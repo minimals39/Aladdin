@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import org.apache.maven.Order;
 
 /**
  * FXML Controller class
@@ -18,11 +19,11 @@ import javafx.scene.control.TableColumn;
  */
 public class SellerOrderController implements Initializable {
     @FXML
-    private TableColumn<?, ?> iname;
+    private TableColumn<Order, String> iname;
     @FXML
-    private TableColumn<?, ?> buyer;
+    private TableColumn<Order, String> buyer;
     @FXML
-    private TableColumn<?, ?> buyeraddr;
+    private TableColumn<Order, String> buyeraddr;
 
     /**
      * Initializes the controller class.
