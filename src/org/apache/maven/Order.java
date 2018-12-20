@@ -21,10 +21,12 @@ public class Order {
     public Order() {
     }
 
-    public Order(String Price, String Seller, String Customer) {
+    public Order(String Price, String Seller, String Customer,String Address,String Name) {
         this.Price = Price;
         this.Seller = Seller;
         this.Customer = Customer;
+        this.Address = Address;
+        this.Name = Name;
 
     }
 
