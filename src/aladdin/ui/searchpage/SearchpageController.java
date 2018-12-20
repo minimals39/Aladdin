@@ -58,6 +58,7 @@ public class SearchpageController implements Initializable {
         Table.setItems(GoodsList);
     }    
     private void Load() {
+        String sql = "";
         Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
 
@@ -67,7 +68,12 @@ public class SearchpageController implements Initializable {
         String Owner = sellerdata.getName();
 
         while (true) {
-            String sql = "SELECT * FROM aladdin.Goods WHERE no= " + number+"LIKE '%"+keyW.getText()+"%'";
+            if (keyW.getText().isEmpty()) {
+                sql = "SELECT * FROM aladdin.Goods WHERE no= " + number;
+            }
+            else {
+                sql = "SELECT * FROM aladdin.Goods WHERE no= " + number+"LIKE '%"+keyW.getText()+"%'";
+            }          
             SQLQuery query = session.createSQLQuery(sql);
             query.setResultTransformer(Criteria.ALIAS_TO_ENTITY_MAP);
             List data = query.list();
