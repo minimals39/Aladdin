@@ -49,8 +49,8 @@ public class SellerOrderController implements Initializable {
         // TODO
         // TODO
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
-        buyer.setCellValueFactory(new PropertyValueFactory<>("buyer"));
-        buyeraddr.setCellValueFactory(new PropertyValueFactory<>("addressindb"));
+        buyer.setCellValueFactory(new PropertyValueFactory<>("Customer"));
+        buyeraddr.setCellValueFactory(new PropertyValueFactory<>("Address"));
         Load();
         Table.setItems(GoodsList);
     }
@@ -84,6 +84,7 @@ public class SellerOrderController implements Initializable {
 
                 if (Owner.equals(owner)) {
                     GoodsList.add(new Order(price,owner, buyer ,adds ,name));
+                    //public Order(String Price, String Seller, String Customer,String Address,String Name)
                     System.out.println(" "+ adds +" "+ buyer + " " + name);
                     //public Order(String Price, String Seller, String Customer)
                 } else {
