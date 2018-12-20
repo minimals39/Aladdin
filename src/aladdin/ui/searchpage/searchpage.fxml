@@ -13,7 +13,7 @@
     </stylesheets>
    <children>
       <TextField fx:id="keyW" layoutX="14.0" layoutY="14.0" promptText="Search" />
-      <TableView layoutY="47.0" prefHeight="355.0" prefWidth="600.0">
+      <TableView fx:id="Table" layoutY="47.0" prefHeight="355.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="86.4000244140625" text="Name" />
           <TableColumn fx:id="price" prefWidth="141.60003662109375" text="Price" />
