@@ -75,7 +75,7 @@ public class MainController implements Initializable {
                Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/searchpage/searchpage.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Search");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -85,7 +85,7 @@ public class MainController implements Initializable {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/checkoutpage/checkoutpage.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Cart");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -95,13 +95,12 @@ public class MainController implements Initializable {
        Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/login/login.fxml"));
         Scene scene = new Scene(root);
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("Login");
         primaryStage.setScene(scene);
         primaryStage.show();
         closeStage();
     }
 
-    @FXML
     private void category(ActionEvent event) {
        Pane newLoadedPane = null;
         try {
@@ -124,6 +123,16 @@ public class MainController implements Initializable {
     showpane.getChildren().clear();
     showpane.getChildren().add(newLoadedPane);        
         
+    }
+
+    @FXML
+    private void yourorder(ActionEvent event) throws IOException{
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("/aladdin/ui/buyerorder/buyerorder.fxml"));
+        Scene scene = new Scene(root);
+        primaryStage.setTitle("Your Order");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     

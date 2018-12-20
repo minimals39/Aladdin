@@ -28,8 +28,6 @@ import org.hibernate.Session;
  */
 public class UserinfoController implements Initializable {
     @FXML
-    private ImageView profpic;
-    @FXML
     private TextField Name;
     @FXML
     private TextField Surname;
@@ -87,9 +85,6 @@ public class UserinfoController implements Initializable {
         
     }    
 
-    @FXML
-    private void pic(ActionEvent event) {
-    }
 
     @FXML
     private void edit(ActionEvent event) {

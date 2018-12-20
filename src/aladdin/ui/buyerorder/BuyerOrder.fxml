@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="aladdin.ui.buyerorder.BuyerOrderController">
+    <stylesheets>
+        <URL value="@buyerorder.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="Table" layoutX="100.0" layoutY="70.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="iname" prefWidth="499.20001220703125" text="ItemName" />
+          <TableColumn fx:id="price" prefWidth="100.0" text="Price" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

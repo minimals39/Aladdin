@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aladdin.ui.SellerOrder;
+package aladdin.ui.buyerorder;
 
 import java.net.URL;
+import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -16,22 +18,25 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.apache.maven.Goods;
 import org.apache.maven.Order;
+import org.apache.persistence.HibernateUtil;
+import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
 
 /**
  * FXML Controller class
  *
  * @author japan
  */
-public class SellerOrderController implements Initializable {
+public class BuyerOrderController implements Initializable {
+    @FXML
+    private TableView<Order> Table;
     @FXML
     private TableColumn<Order, String> iname;
     @FXML
-    private TableColumn<Order, String> buyer;
-    @FXML
-    private TableColumn<Order, String> buyeraddr;
+    private TableColumn<Order, String> price;
+    
     private ObservableList<Order> GoodsList = FXCollections.observableArrayList();
-    @FXML
-    private TableView<Order> Table;
 
     /**
      * Initializes the controller class.
@@ -39,14 +44,12 @@ public class SellerOrderController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-                // TODO
         iname.setCellValueFactory(new PropertyValueFactory<>("name"));
-        buyer.setCellValueFactory(new PropertyValueFactory<>("buyer"));
-        buyeraddr.setCellValueFactory(new PropertyValueFactory<>("addressindb")); 
+        price.setCellValueFactory(new PropertyValueFactory<>("price"));
         Load();
         Table.setItems(GoodsList);
     }    
-           private void Load() {
+        private void Load() {
             
             /*
         }
@@ -77,4 +80,5 @@ public class SellerOrderController implements Initializable {
             }
             number++;*/
         }
+
 }

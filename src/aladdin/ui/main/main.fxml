@@ -13,6 +13,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="search" mnemonicParsing="false" onAction="#search" prefHeight="40.0" prefWidth="100.0" text="Search" />
+                  <Button mnemonicParsing="false" onAction="#yourorder" prefHeight="47.0" prefWidth="127.0" text="YourOrder" />
                </children>
             </VBox>
          </left>
